@@ -54,7 +54,6 @@ export const suppliers = [
   { name: 'JTR', sub: '门票', tag: '已签约', status: '对接中' },
   { name: 'Jalan', sub: '酒店', tag: '已签约', status: '对接中' },
   { name: 'Canlead', sub: '租车（台湾）', tag: '规划', status: '规划中' },
-  { name: 'fintech', sub: '留学生跨境汇款', tag: '合作', status: '在跑' },
 ];
 
 export const systems = [

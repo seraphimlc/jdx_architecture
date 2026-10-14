@@ -37,7 +37,6 @@ export const architecture = {
       { name: 'Canlead', group: '台湾供给', desc: '首期租车规划' },
       { name: '国税厅 / 海关', group: '退税依赖', desc: '购买记录报送 · 海关确认结果' },
       { name: '转账网关', group: '资金执行', desc: '游客账户出款与结果反馈' },
-      { name: 'fintech', group: '链接合作', desc: '留学缴费，资金不过我方' },
     ],
   },
   paths: [
@@ -67,7 +66,6 @@ export const architecture = {
     { name: '租车服务', scene: '台湾租车 / 租包车', status: '规划中', scope: '服务定义 · 服务订单 · 服务履约', note: 'Canlead 首期方向；具体系统设计待明确', page: '台湾站', tone: 'consumer' },
     { name: '预约服务', scene: '预约 / 预定', status: '规划中', scope: '服务预约 · 场所预约 · 服务履约', note: '计划纳入商户平台，排期未定', page: '营销域', tone: 'merchant' },
     { name: '渠道权限', scene: '渠道 × 业务', status: '部分已有', scope: '渠道权限配置 · 业务授权', note: '管理端已有用途；原图此项无服务连线', page: '开放平台', tone: 'operator', arrow: false },
-    { name: '留学缴费跳转', scene: '留学缴费', status: '在跑', scope: '链接跳转至 fintech', note: '合作方完成汇款，资金不经我方', page: '留学缴费', tone: 'consumer' },
   ],
   foundations: [
     { name: '商品域', status: '在跑', items: ['品牌', '类目', '商品', '规格 / 供给映射'], reuse: '多产品、多业务复用候选', page: '商品域' },
@@ -101,7 +99,6 @@ export const architecture = {
     { name: '佐川物流', status: 'API 已接', desc: '空手行履约', page: '佐川物流' },
     { name: 'JTR', status: '对接中', desc: '门票 API · 已签约', page: 'JTR' },
     { name: 'Jalan', status: '对接中', desc: '酒店 API · 已签约', page: 'Jalan' },
-    { name: 'fintech', status: '链接在跑', desc: '留学汇款 · 钱不过我方账', page: 'fintech' },
     { name: 'Canlead', status: '规划中', desc: '台湾站首期租车供给', page: 'Canlead' },
     { name: '国税厅', status: '接入状态待确认', desc: '接收购买记录报送；供平台查询海关确认结果', page: '退税' },
     { name: '海关', status: '业务流程已确认', desc: '游客出境时核验护照与商品；平台经国税厅系统取得确认结果', page: '退税' },
@@ -133,7 +130,6 @@ export const architecture = {
     { from: '空手行系统', method: '履约 API', to: '佐川物流', state: '已接通', type: 'connected', note: '行李送至酒店', page: '佐川物流' },
     { from: 'BilionPass 门票', method: '供给 API', to: 'JTR', state: '对接中', type: 'planned', note: '已签约，未上线', page: '门票' },
     { from: 'BilionPass 酒店', method: '供给 API', to: 'Jalan', state: '对接中', type: 'planned', note: '已签约，未上线', page: '酒店' },
-    { from: 'BilionPass 自有端', method: '链接跳转', to: 'fintech', state: '在跑', type: 'link', note: '合作方完成留学缴费', page: '留学缴费' },
     { from: '综合平台 API', method: '对外数据出口', to: '外部合作方', state: '在跑', type: 'connected', note: '接收方与数据范围待确认', page: '综合平台 API' },
     { from: '行前购系统', method: '商品库存 API', to: '机场免税店', state: '已对接', type: 'connected', note: '各机场上线进度分别确认', page: '行前购系统' },
     { from: '东航 → 台湾业务', method: '租车链路', to: 'Canlead', state: '规划中', type: 'planned', note: '具体接入方式待明确', page: '台湾站' },
