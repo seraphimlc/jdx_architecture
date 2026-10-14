@@ -37,6 +37,7 @@ export const architecture = {
       { name: 'Canlead', group: '台湾供给', desc: '首期租车规划' },
       { name: '国税厅 / 海关', group: '退税依赖', desc: '购买记录报送 · 海关确认结果' },
       { name: '转账网关', group: '资金执行', desc: '游客账户出款与结果反馈' },
+      { name: 'fintech', group: '支付合作', desc: 'BilionPass 在线支付与收款能力' },
     ],
   },
   paths: [
@@ -99,6 +100,7 @@ export const architecture = {
     { name: '佐川物流', status: 'API 已接', desc: '空手行履约', page: '佐川物流' },
     { name: 'JTR', status: '对接中', desc: '门票 API · 已签约', page: 'JTR' },
     { name: 'Jalan', status: '对接中', desc: '酒店 API · 已签约', page: 'Jalan' },
+    { name: 'fintech', status: '在跑', desc: '在线支付与收款能力', page: 'fintech' },
     { name: 'Canlead', status: '规划中', desc: '台湾站首期租车供给', page: 'Canlead' },
     { name: '国税厅', status: '接入状态待确认', desc: '接收购买记录报送；供平台查询海关确认结果', page: '退税' },
     { name: '海关', status: '业务流程已确认', desc: '游客出境时核验护照与商品；平台经国税厅系统取得确认结果', page: '退税' },
@@ -126,6 +128,7 @@ export const architecture = {
   connections: [
     { from: '携程', method: 'API', to: '空手行系统', state: '已接通', type: 'connected', note: '渠道业务对接', page: '空手行' },
     { from: '东航 APP', method: '嵌入 H5', to: '空手行系统', state: '已接通', type: 'connected', note: '面向东航会员；我方页面成交', page: '空手行' },
+    { from: 'BilionPass 自有端', method: '在线支付', to: 'fintech', state: '在跑', type: 'connected', note: 'BilionPass 支付与收款能力由 fintech 提供', page: 'fintech' },
     { from: '空手行自运营端', method: 'H5', to: '空手行系统', state: '已接通', type: 'connected', note: '面向全球用户', page: '空手行' },
     { from: '空手行系统', method: '履约 API', to: '佐川物流', state: '已接通', type: 'connected', note: '行李送至酒店', page: '佐川物流' },
     { from: 'BilionPass 门票', method: '供给 API', to: 'JTR', state: '对接中', type: 'planned', note: '已签约，未上线', page: '门票' },

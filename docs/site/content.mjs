@@ -250,7 +250,8 @@ export const blocks = [
       supply: [
         '佐川物流',
         'JTR',
-        'Jalan'
+        'Jalan',
+        'fintech'
       ],
       distribution: [
         '外部渠道',
@@ -354,7 +355,8 @@ export const blocks = [
     ],
     deps: {
       supply: [
-        '佐川物流'
+        '佐川物流',
+        'fintech'
       ],
       hub: [
         '商品与库存',
@@ -474,7 +476,8 @@ export const blocks = [
     ],
     deps: {
       supply: [
-        '佐川物流'
+        '佐川物流',
+        'fintech'
       ],
       hub: [
         '商品与库存',
@@ -1110,6 +1113,35 @@ export const blocks = [
     source: 'docs/业务与系统全貌备忘.md §13.6；docs/平台大框架.md §五；docs/新会话冷启动.md。'
   },
   {
+    id: 'page-sup-fintech',
+    group: '供给方',
+    name: 'fintech',
+    badge: '合作 · 在跑',
+    oneliner: '支付机构，为 BilionPass 提供在线支付与收款能力。',
+    audience: 'BilionPass 各业务与自有端',
+    current: [
+      '**角色**：支付机构，BilionPass 的在线支付能力与收款能力由其提供。',
+      '**边界**：提供的是支付与收款服务能力，不是业务内容供给。'
+    ],
+    deps: {
+      supply: [],
+      hub: [],
+      distribution: [
+        '自有渠道'
+      ],
+      related: [
+        'BilionPass',
+        '资金与结算'
+      ]
+    },
+    next: [],
+    judgment: [],
+    open: [
+      '具体接入范围、通道与结算口径。'
+    ],
+    source: '2026-10-14 用户确认：fintech 是支付机构，BilionPass 的在线支付与收款能力由其提供。'
+  },
+  {
     id: 'page-sup-owned',
     group: '供给方',
     name: '自建能力',
@@ -1724,6 +1756,7 @@ export const facts = [
   ['渠道接入', '携程—空手行：API；东航—空手行：H5。优惠券目前未与东航做 API 对接。'],
   ['渠道授权', '按业务逐项授权。酒店预订不给携程，可提供给东航。'],
   ['收款方式', 'API 交易：渠道收款后按周期结算给公司；H5 交易：公司页面成交，直接收款。'],
+  ['在线支付与收款', 'BilionPass 的在线支付能力与收款能力由支付机构 fintech 提供。'],
   ['退税服务费', '按退税额的 15% 收取。退税额 1,000，游客实收 850，服务费 150。'],
   ['退税上报与出款', '平台向国税厅报送并取得海关结果；海关确认后，商户向我方公司指定账户支付退税全额。平台核对到账，保留服务费，经转账网关付给游客。'],
   ['门票、酒店分成', '按营业额的 5% 抽佣，属于初步方案。'],
