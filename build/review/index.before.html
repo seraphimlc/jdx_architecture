@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BilionPass 平台说明 · 业务 · 系统 · 规划</title>
+<style>
+  * { box-sizing:border-box; }
+  :root { --ink:#1f2937; --sub:#6b7280; --faint:#9aa4b2; --line:#e3e8ef; --bg:#f6f8fb; --blue:#2b5bb5; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:15px/1.75 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif; }
+  code { font:12.5px/1.5 "SF Mono",ui-monospace,Menlo,monospace; background:#eef1f5; border-radius:4px; padding:1px 5px; }
+  a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
+  aside { position:fixed; top:0; left:0; bottom:0; width:248px; overflow-y:auto; background:#fff;
+          border-right:1px solid var(--line); padding:22px 14px 40px; }
+  aside .brand { font-weight:600; font-size:15px; padding:0 8px 3px; }
+  aside .brandsub { font-size:12px; color:var(--faint); padding:0 8px 14px; border-bottom:1px solid var(--line); margin-bottom:10px; }
+  .navg { font-size:11.5px; color:var(--faint); letter-spacing:1px; margin:14px 8px 4px; }
+  aside a { display:block; padding:5px 8px; border-radius:6px; font-size:13.5px; color:#374151; }
+  aside a:hover { background:#f1f5f9; text-decoration:none; }
+  aside a.todolink { color:var(--faint); font-size:12.5px; }
+  main { margin-left:248px; padding:28px 40px 80px; max-width:1240px; }
+  header.top { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  h1 { font-size:26px; margin:0; letter-spacing:.2px; }
+  .pos { font-size:14px; color:var(--blue); background:#eef4ff; border:1px solid #cfe0ff; border-radius:999px; padding:3px 12px; }
+  .topmeta { font-size:12.5px; color:var(--faint); margin-bottom:26px; }
+  section, .bpage { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 26px; margin-bottom:18px; }
+  h2 { font-size:19px; margin:0 0 10px; }
+  h4 { font-size:13px; color:var(--sub); margin:18px 0 6px; letter-spacing:.3px; }
+  ul { margin:6px 0; padding-left:20px; } li { margin:4px 0; }
+  .oneliner { font-size:15.5px; color:#111827; margin:6px 0 2px; }
+  .meta, .kind { font-size:12px; color:var(--faint); margin-bottom:6px; }
+  .badge { display:inline-block; font-size:11.5px; font-weight:600; border-radius:6px; padding:1px 8px; vertical-align:middle; }
+  .badge.run { color:#166534; background:#ecfdf3; border:1px solid #a7e8c0; }
+  .badge.partial { color:#8a6a00; background:#fffaeb; border:1px solid #e6d08a; }
+  .badge.dev { color:#1d4ed8; background:#eff6ff; border:1px solid #bcd4ff; }
+  .badge.plan { color:#4b5563; background:#f3f4f6; border:1px solid #dfe3e8; }
+  .badge.none { color:#b91c1c; background:#fef2f2; border:1px solid #f3c0c0; }
+  .tag { display:inline-block; font-size:11.5px; color:#7c3aed; border:1px solid #ddd0fb; background:#f7f4ff; border-radius:6px; padding:1px 8px; vertical-align:middle; }
+  .deps { display:flex; flex-direction:column; gap:4px; font-size:13.5px; }
+  .dl { display:inline-block; min-width:74px; color:var(--faint); font-size:12.5px; }
+  .backlink { font-size:12.5px; color:var(--faint); display:inline-block; margin-bottom:8px; }
+  svg { display:block; margin:6px 0 4px; }
+  g.bx { cursor:pointer; } g.bx:hover rect { filter:brightness(.96); } g.bx:focus { outline:none; }
+  .legend { font-size:12.5px; color:var(--sub); margin-top:10px; }
+  .legend i { display:inline-block; width:9px; height:9px; border-radius:50%; margin:0 4px 0 12px; }
+  .callout { border-left:3px solid #cfe0ff; background:#f7faff; border-radius:0 8px 8px 0; padding:10px 14px; margin:10px 0 4px; font-size:14px; color:#374151; }
+  table { border-collapse:collapse; width:100%; font-size:13.5px; margin-top:8px; }
+  th, td { border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top; }
+  th { background:#f8fafc; font-weight:600; color:#374151; font-size:12.5px; }
+  .diag { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:8px; }
+  .diag .card { border:1px solid var(--line); border-radius:10px; padding:14px; }
+  .diag .rank { font-size:11.5px; color:var(--faint); }
+  .diag .nm { font-size:15px; font-weight:600; margin:2px 0 4px; }
+  .diag .now { font-size:12.5px; color:#b91c1c; margin-bottom:6px; }
+  .todo { border:1px dashed #d5dbe3; background:#fcfeff; border-radius:10px; padding:12px 16px; color:var(--sub); font-size:13.5px; }
+  @media print {
+    aside { display:none; } main { margin:0; max-width:none; padding:0; }
+    body { background:#fff; font-size:12px; }
+    section, .bpage { border:none; padding:0 0 10px; margin-bottom:10px; break-inside:avoid; }
+    .bpage { display:block !important; } a { color:inherit; text-decoration:none; }
+  }
+</style></head>
+<body>
+<aside>
+  <div class="brand">BilionPass 平台说明</div>
+  <div class="brandsub">业务 · 系统 · 规划 ｜ v0.2（业务全景图 + 2 篇样例） ｜ 2026-09-29</div>
+  <div class="navg">总览</div><a href="#/ov">业务全景</a><a href="#/cap">平台能力现状</a><a href="#/diag">关键诊断</a><a href="#/facts">事实清单</a><div class="navg">产品与服务内容</div><a href="#/b/b-%E8%A1%8C%E5%89%8D%E8%B4%AD">行前购</a><a href="#/b/b-%E7%A9%BA%E6%89%8B%E8%A1%8C">空手行</a><a href="#/b/b-%E9%97%A8%E7%A5%A8">门票</a><a href="#/b/b-%E9%85%92%E5%BA%97">酒店</a><a href="#/b/b-%E7%A7%9F-%E5%8C%85%E8%BD%A6">租 / 包车</a><a href="#/b/b-%E4%BC%98%E6%83%A0%E5%88%B8">优惠券</a><a href="#/b/b-%E9%80%80%E7%A8%8E">退税</a><a href="#/b/b-%E7%95%99%E5%AD%A6%E7%BC%B4%E8%B4%B9">留学缴费</a><a href="#/b/b-%E8%A1%8C%E7%A8%8B%E8%A7%84%E5%88%92">行程规划</a><div class="navg">合作供给方</div><a href="#/b/sup-%E6%9C%BA%E5%9C%BA-%E7%BE%BD%E7%94%B0-%E6%88%90%E7%94%B0-%E5%85%B3%E8%A5%BF">机场（羽田 / 成田 / 关西）</a><a href="#/b/sup-%E4%BD%90%E5%B7%9D%E7%89%A9%E6%B5%81">佐川物流</a><a href="#/b/sup-JTR">JTR</a><a href="#/b/sup-Jalan">Jalan</a><a href="#/b/sup-Canlead">Canlead</a><a href="#/b/sup-fintech">fintech</a><a href="#/b/sup-%E6%97%A5%E6%9C%AC%E5%87%BA%E6%AC%BE%E5%90%88%E4%BD%9C%E6%96%B9">日本出款合作方</a><div class="navg">自有平台系统</div><a href="#/b/sys-%E7%BB%BC%E5%90%88%E5%B9%B3%E5%8F%B0-Portal">综合平台 Portal</a><a href="#/b/sys-%E5%95%86%E6%88%B7-SAAS">商户 SAAS</a><a href="#/b/sys-%E7%AE%A1%E7%90%86%E7%AB%AF">管理端</a><a href="#/b/sys-%E7%BB%BC%E5%90%88%E5%B9%B3%E5%8F%B0-API">综合平台 API</a><a href="#/b/sys-%E8%A1%8C%E5%89%8D%E8%B4%AD%E7%B3%BB%E7%BB%9F">行前购系统</a><a href="#/b/sys-%E7%A9%BA%E6%89%8B%E8%A1%8C%E7%B3%BB%E7%BB%9F">空手行系统</a><a href="#/b/sys-%E8%87%AA%E6%9C%89%E7%AB%AF">自有端</a><div class="navg">三端</div><a href="#/b/end-BilionPass">BilionPass</a><a href="#/b/end-%E5%95%86%E6%88%B7%E5%B9%B3%E5%8F%B0-%E5%95%86%E6%88%B7-SAAS">商户平台 · 商户 SAAS</a><a href="#/b/end-%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0-%E7%AE%A1%E7%90%86%E7%AB%AF">管理平台 · 管理端</a><div class="navg">分发出口</div><a href="#/b/exit-%E8%87%AA%E6%9C%89%E7%AB%AF-%E8%87%AA%E5%B7%B1%E5%8D%96">自有端（自己卖）</a><a href="#/b/exit-%E5%A4%96%E9%83%A8%E6%B8%A0%E9%81%93">外部渠道</a><a href="#/b/exit-%E7%A4%BE%E5%AA%92%E4%B8%8E-KOL">社媒与 KOL</a><div class="navg">已有说明</div><a href="#/b/blk-%E2%91%A2-%E8%B5%84%E9%87%91%E4%B8%8E%E7%BB%93%E7%AE%97">资金与结算</a><div class="navg">待补</div><a href="#/ov" class="todolink">业务 8 块未写</a><a href="#/ov" class="todolink">供给 7 块未写</a><a href="#/ov" class="todolink">中枢 8 块未写</a><a href="#/ov" class="todolink">分发 4 块未写</a>
+</aside>
+<main>
+  <header class="top"><h1>BilionPass 平台说明</h1><span class="pos">把本地服务供给，接进既有大渠道</span></header>
+  <div class="topmeta">业务 · 系统 · 规划 ｜ v0.2（业务全景图 + 2 篇样例） ｜ 更新 2026-09-29　事实来源：CTO 口述 + v1 架构图转录。文中【事实】为 CTO 确认，【判断】为整理者推断，【待确认】为尚未澄清。</div>
+
+  <div id="view-overview">
+    <section id="ov">
+      <h2>业务全景</h2>
+      <div class="callout">对渠道而言，BilionPass 是<strong>服务供给商</strong>——我们整合一系列日本本地服务交给渠道，用来丰富渠道自己的能力。<br>对旅客而言，BilionPass 是自有平台（bilionpass.com / APP / 小程序）。</div>
+      <p class="oneliner">每个框都能点开，看它自己的说明。</p>
+      <svg viewBox="0 0 1120 938" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="18" width="1084" height="88" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="62" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 62)" letter-spacing="3">三端</text>
+  <g class="bx" data-block="end-BilionPass" tabindex="0"><rect x="120" y="32" width="320" height="60" rx="9" fill="#f6faff" stroke="#5b8def"/><text x="132" y="53" font-size="13" font-weight="600" fill="#2b5bb5">BilionPass</text><text x="132" y="70" font-size="11.5" fill="#4b5563">C 端 · 赴日中国旅客 / 全球游客</text><circle cx="426" cy="79" r="4" fill="#16a34a"/></g>
+  <g class="bx" data-block="end-商户平台-商户-SAAS" tabindex="0"><rect x="450" y="32" width="320" height="60" rx="9" fill="#f6faff" stroke="#5b8def"/><text x="462" y="53" font-size="13" font-weight="600" fill="#2b5bb5">商户平台 · 商户 SAAS</text><text x="462" y="70" font-size="11.5" fill="#4b5563">B 端 · 日本本地商户</text><circle cx="756" cy="79" r="4" fill="#16a34a"/></g>
+  <g class="bx" data-block="end-管理平台-管理端" tabindex="0"><rect x="780" y="32" width="320" height="60" rx="9" fill="#f6faff" stroke="#5b8def"/><text x="792" y="53" font-size="13" font-weight="600" fill="#2b5bb5">管理平台 · 管理端</text><text x="792" y="70" font-size="11.5" fill="#4b5563">A 端 · 我们自己公司（内部后台）</text><circle cx="1086" cy="79" r="4" fill="#16a34a"/></g>
+  <rect x="18" y="122" width="1084" height="170" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="207" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 207)" letter-spacing="3">分发出口</text>
+  <g class="bx" data-block="exit-自有端-自己卖" tabindex="0">
+  <rect x="120" y="136" width="320" height="142" rx="9" fill="#fbfcfe" stroke="#dfe4ec"/>
+  <text x="132" y="156" font-size="12" font-weight="600" fill="#4b5563">自有端（自己卖）</text>
+  <rect x="132" y="164" width="172" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="218" y="180" font-size="12" fill="#374151" text-anchor="middle">bilionpass.com（日本站）</text><rect x="310" y="164" width="40" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="330" y="180" font-size="12" fill="#374151" text-anchor="middle">APP</text>
+  <text x="132" y="268" font-size="10.5" fill="#9aa4b2">还有 3 项，点开看</text>
+  </g>
+  <g class="bx" data-block="exit-外部渠道" tabindex="0">
+  <rect x="450" y="136" width="320" height="142" rx="9" fill="#fbfcfe" stroke="#dfe4ec"/>
+  <text x="462" y="156" font-size="12" font-weight="600" fill="#4b5563">外部渠道</text>
+  <rect x="686.675" y="144" width="73.32499999999999" height="17" rx="8" fill="#fff" stroke="#e6c86a"/>
+  <text x="723.3375" y="156" font-size="10.5" fill="#b08a2e" text-anchor="middle">已接入 3 条</text>
+  <rect x="462" y="164" width="68" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="496" y="180" font-size="12" fill="#374151" text-anchor="middle">上架销售</text><rect x="536" y="164" width="68" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="570" y="180" font-size="12" fill="#374151" text-anchor="middle">会员权益</text>
+  <rect x="462" y="196" width="174" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="549" y="212" font-size="12" fill="#374151" text-anchor="middle">携程 → 空手行（API 对接）</text><rect x="462" y="226" width="168" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="546" y="242" font-size="12" fill="#374151" text-anchor="middle">东航 → 空手行（嵌入 H5）</text>
+  <text x="462" y="268" font-size="10.5" fill="#9aa4b2">还有 1 项，点开看</text>
+  </g>
+  <g class="bx" data-block="exit-社媒与-KOL" tabindex="0">
+  <rect x="780" y="136" width="320" height="142" rx="9" fill="#fbfcfe" stroke="#dfe4ec"/>
+  <text x="792" y="156" font-size="12" font-weight="600" fill="#4b5563">社媒与 KOL</text>
+  <rect x="792" y="164" width="92" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="838" y="180" font-size="12" fill="#374151" text-anchor="middle">自营社媒账号</text><rect x="890" y="164" width="118" height="24" rx="12" fill="#f8fafc" stroke="#e3e8ef"/><text x="949" y="180" font-size="12" fill="#374151" text-anchor="middle">KOL 分销（规划）</text>
+  </g>
+  <rect x="18" y="308" width="1084" height="212" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="414" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 414)" letter-spacing="3">产品与服务内容</text>
+  <g class="bx" data-block="b-行前购" tabindex="0"><rect x="120" y="322" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="132" y="344" font-size="14.5" font-weight="600" fill="#1f2937">行前购</text><text x="132" y="361" font-size="11.5" fill="#4b5563">自营闭环</text><circle cx="426" cy="365" r="4" fill="#16a34a"/></g>
+  <g class="bx" data-block="b-空手行" tabindex="0"><rect x="450" y="322" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="462" y="344" font-size="14.5" font-weight="600" fill="#1f2937">空手行</text><text x="462" y="361" font-size="11.5" fill="#4b5563">自营闭环</text><circle cx="756" cy="365" r="4" fill="#16a34a"/></g>
+  <g class="bx" data-block="b-门票" tabindex="0"><rect x="780" y="322" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="792" y="344" font-size="14.5" font-weight="600" fill="#1f2937">门票</text><text x="792" y="361" font-size="11.5" fill="#4b5563">合作分销</text><circle cx="1086" cy="365" r="4" fill="#e0a800"/></g>
+  <g class="bx" data-block="b-酒店" tabindex="0"><rect x="120" y="386" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="132" y="408" font-size="14.5" font-weight="600" fill="#1f2937">酒店</text><text x="132" y="425" font-size="11.5" fill="#4b5563">合作分销</text><circle cx="426" cy="429" r="4" fill="#e0a800"/></g>
+  <g class="bx" data-block="b-租-包车" tabindex="0"><rect x="450" y="386" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="462" y="408" font-size="14.5" font-weight="600" fill="#1f2937">租 / 包车</text><text x="462" y="425" font-size="11.5" fill="#4b5563">合作分销</text><circle cx="756" cy="429" r="4" fill="#9aa4b2"/></g>
+  <g class="bx" data-block="b-优惠券" tabindex="0"><rect x="780" y="386" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="792" y="408" font-size="14.5" font-weight="600" fill="#1f2937">优惠券</text><text x="792" y="425" font-size="11.5" fill="#4b5563">能力输出</text><circle cx="1086" cy="429" r="4" fill="#e0a800"/></g>
+  <g class="bx" data-block="b-退税" tabindex="0"><rect x="120" y="450" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="132" y="472" font-size="14.5" font-weight="600" fill="#1f2937">退税</text><text x="132" y="489" font-size="11.5" fill="#4b5563">能力输出</text><circle cx="426" cy="493" r="4" fill="#2563eb"/></g>
+  <g class="bx" data-block="b-留学缴费" tabindex="0"><rect x="450" y="450" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="462" y="472" font-size="14.5" font-weight="600" fill="#1f2937">留学缴费</text><text x="462" y="489" font-size="11.5" fill="#4b5563">引流挂链</text><circle cx="756" cy="493" r="4" fill="#16a34a"/></g>
+  <g class="bx" data-block="b-行程规划" tabindex="0"><rect x="780" y="450" width="320" height="56" rx="9" fill="#fffdf7" stroke="#e6c86a"/><text x="792" y="472" font-size="14.5" font-weight="600" fill="#1f2937">行程规划</text><text x="792" y="489" font-size="11.5" fill="#4b5563">平台功能</text><circle cx="1086" cy="493" r="4" fill="#e0a800"/></g>
+  <rect x="18" y="536" width="1084" height="222" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="647" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 647)" letter-spacing="3">合作供给方</text>
+  <g class="bx" data-block="sup-机场-羽田-成田-关西" tabindex="0"><rect x="120" y="550" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="132" y="571" font-size="12.5" font-weight="600" fill="#17663c">机场（羽田 / 成田 / 关西）</text><text x="132" y="588" font-size="11.5" fill="#4b5563">免税店货 · 取货点</text><rect x="395" y="559" width="35" height="17" rx="8" fill="#fff" stroke="#b45309" stroke-opacity=".45"/><text x="412.5" y="571" font-size="10.5" fill="#b45309" text-anchor="middle">股东</text></g>
+  <g class="bx" data-block="sup-佐川物流" tabindex="0"><rect x="450" y="550" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="462" y="571" font-size="12.5" font-weight="600" fill="#17663c">佐川物流</text><text x="462" y="588" font-size="11.5" fill="#4b5563">行李履约</text><rect x="725" y="559" width="35" height="17" rx="8" fill="#fff" stroke="#b45309" stroke-opacity=".45"/><text x="742.5" y="571" font-size="10.5" fill="#b45309" text-anchor="middle">股东</text></g>
+  <g class="bx" data-block="sup-JTR" tabindex="0"><rect x="780" y="550" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="792" y="571" font-size="12.5" font-weight="600" fill="#17663c">JTR</text><text x="792" y="588" font-size="11.5" fill="#4b5563">门票</text><rect x="1044.5" y="559" width="45.5" height="17" rx="8" fill="#fff" stroke="#5b21b6" stroke-opacity=".45"/><text x="1067.25" y="571" font-size="10.5" fill="#5b21b6" text-anchor="middle">已签约</text></g>
+  <g class="bx" data-block="sup-Jalan" tabindex="0"><rect x="120" y="618" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="132" y="639" font-size="12.5" font-weight="600" fill="#17663c">Jalan</text><text x="132" y="656" font-size="11.5" fill="#4b5563">酒店</text><rect x="384.5" y="627" width="45.5" height="17" rx="8" fill="#fff" stroke="#5b21b6" stroke-opacity=".45"/><text x="407.25" y="639" font-size="10.5" fill="#5b21b6" text-anchor="middle">已签约</text></g>
+  <g class="bx" data-block="sup-Canlead" tabindex="0"><rect x="450" y="618" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="462" y="639" font-size="12.5" font-weight="600" fill="#17663c">Canlead</text><text x="462" y="656" font-size="11.5" fill="#4b5563">租车（台湾）</text><rect x="725" y="627" width="35" height="17" rx="8" fill="#fff" stroke="#6b7280" stroke-opacity=".45"/><text x="742.5" y="639" font-size="10.5" fill="#6b7280" text-anchor="middle">规划</text></g>
+  <g class="bx" data-block="sup-fintech" tabindex="0"><rect x="780" y="618" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="792" y="639" font-size="12.5" font-weight="600" fill="#17663c">fintech</text><text x="792" y="656" font-size="11.5" fill="#4b5563">留学生跨境汇款</text><rect x="1055" y="627" width="35" height="17" rx="8" fill="#fff" stroke="#0f766e" stroke-opacity=".45"/><text x="1072.5" y="639" font-size="10.5" fill="#0f766e" text-anchor="middle">合作</text></g>
+  <g class="bx" data-block="sup-日本出款合作方" tabindex="0"><rect x="120" y="686" width="320" height="58" rx="9" fill="#f7fdf9" stroke="#79c39a"/><text x="132" y="707" font-size="12.5" font-weight="600" fill="#17663c">日本出款合作方</text><text x="132" y="724" font-size="11.5" fill="#4b5563">退税打款到游客账户（先借后自建）</text><rect x="395" y="695" width="35" height="17" rx="8" fill="#fff" stroke="#0f766e" stroke-opacity=".45"/><text x="412.5" y="707" font-size="10.5" fill="#0f766e" text-anchor="middle">合作</text></g>
+  <rect x="18" y="774" width="1084" height="146" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="847" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 847)" letter-spacing="3">自有平台系统</text>
+  <g class="bx" data-block="sys-综合平台-Portal" tabindex="0"><rect x="120" y="788" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="132" y="809" font-size="12.5" font-weight="600" fill="#1f2937">综合平台 Portal</text><text x="132" y="826" font-size="11.5" fill="#4b5563">旅客 web（PC + H5）</text></g>
+  <g class="bx" data-block="sys-商户-SAAS" tabindex="0"><rect x="368" y="788" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="380" y="809" font-size="12.5" font-weight="600" fill="#1f2937">商户 SAAS</text><text x="380" y="826" font-size="11.5" fill="#4b5563">退税 · 优惠券 · 预约</text></g>
+  <g class="bx" data-block="sys-管理端" tabindex="0"><rect x="616" y="788" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="628" y="809" font-size="12.5" font-weight="600" fill="#1f2937">管理端</text><text x="628" y="826" font-size="11.5" fill="#4b5563">内部后台 · 渠道权限</text></g>
+  <g class="bx" data-block="sys-综合平台-API" tabindex="0"><rect x="864" y="788" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="876" y="809" font-size="12.5" font-weight="600" fill="#1f2937">综合平台 API</text><text x="876" y="826" font-size="11.5" fill="#4b5563">对外数据出口</text></g>
+  <g class="bx" data-block="sys-行前购系统" tabindex="0"><rect x="120" y="852" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="132" y="873" font-size="12.5" font-weight="600" fill="#1f2937">行前购系统</text><text x="132" y="890" font-size="11.5" fill="#4b5563">C 端 + B 端（机场运营方用）</text></g>
+  <g class="bx" data-block="sys-空手行系统" tabindex="0"><rect x="368" y="852" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="380" y="873" font-size="12.5" font-weight="600" fill="#1f2937">空手行系统</text><text x="380" y="890" font-size="11.5" fill="#4b5563">下单 + 佐川履约对接</text></g>
+  <g class="bx" data-block="sys-自有端" tabindex="0"><rect x="616" y="852" width="238" height="54" rx="9" fill="#fafbfc" stroke="#ced5df"/><text x="628" y="873" font-size="12.5" font-weight="600" fill="#1f2937">自有端</text><text x="628" y="890" font-size="11.5" fill="#4b5563">WEB / APP / 小程序</text></g>
+</svg>
+      <div class="legend">
+        状态：<i style="background:#16a34a"></i>在跑<i style="background:#e0a800"></i>对接中 / 待推广
+        <i style="background:#2563eb"></i>开发中<i style="background:#9aa4b2"></i>规划中 / 未上线
+      </div>
+    </section>
+
+    <section id="cap">
+      <h2>平台能力现状</h2>
+      <p class="oneliner">平台系统件都已自研在跑，但<strong>能力层很薄</strong>——11 项里只有 4 项在跑，其中结算、风控、履约三项都还没做。</p>
+      <svg viewBox="0 0 1120 168" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="18" width="1084" height="132" rx="12" fill="#fff" stroke="#e3e8ef"/>
+  <text x="62" y="84" font-size="12.5" font-weight="600" fill="#8a95a5" text-anchor="middle" transform="rotate(-90 62 84)" letter-spacing="3">平台能力</text>
+  <rect x="120" y="32" width="484" height="104" rx="9" fill="#f7fdf9" stroke="#79c39a"/>
+  <text x="132" y="56" font-size="12.5" font-weight="600" fill="#17663c">已自研在跑（4）</text>
+  <rect x="132" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#a7e8c0"/><text x="154" y="82" font-size="12" fill="#166534" text-anchor="middle">会员</text><rect x="182" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#a7e8c0"/><text x="204" y="82" font-size="12" fill="#166534" text-anchor="middle">交易</text><rect x="232" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#a7e8c0"/><text x="254" y="82" font-size="12" fill="#166534" text-anchor="middle">资金</text><rect x="282" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#a7e8c0"/><text x="304" y="82" font-size="12" fill="#166534" text-anchor="middle">商品</text>
+  <rect x="618" y="32" width="484" height="104" rx="9" fill="#fafbfc" stroke="#ced5df"/>
+  <text x="630" y="56" font-size="12.5" font-weight="600" fill="#6b7280">还没做（7）</text>
+  <rect x="630" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="652" y="82" font-size="12" fill="#6b7280" text-anchor="middle">营销</text><rect x="680" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="702" y="82" font-size="12" fill="#6b7280" text-anchor="middle">履约</text><rect x="730" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="752" y="82" font-size="12" fill="#6b7280" text-anchor="middle">结算</text><rect x="780" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="802" y="82" font-size="12" fill="#6b7280" text-anchor="middle">风控</text><rect x="830" y="66" width="44" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="852" y="82" font-size="12" fill="#6b7280" text-anchor="middle">库存</text><rect x="880" y="66" width="56" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="908" y="82" font-size="12" fill="#6b7280" text-anchor="middle">大模型</text><rect x="942" y="66" width="68" height="24" rx="12" fill="#fff" stroke="#e3e8ef"/><text x="976" y="82" font-size="12" fill="#6b7280" text-anchor="middle">数据资产</text>
+</svg>
+    </section>
+
+    <section id="diag">
+      <h2>关键诊断 <span class="badge plan">已确认</span></h2>
+      <p class="oneliner">按 CTO 确认的优先级排序：<strong>结算 &gt; 风控 &gt; 履约</strong>。</p>
+      <div class="diag">
+        <div class="card"><div class="rank">优先级 1</div><div class="nm">结算</div>
+          <div class="now">现状：手工对账</div><div>全业务过账 + 多分账对象（机场、佐川、JTR、Jalan、Canlead）+ 多规则（门票酒店 5% 佣金、退税 15% 手续费）+ 跨中日资金，全靠手工。业务量一涨即卡死，差错直接是钱。</div></div><div class="card"><div class="rank">优先级 2</div><div class="nm">风控</div>
+          <div class="now">现状：无</div><div>代收全款 + 手工对账 + 零风控三重叠加：支付风险、退款欺诈、渠道套利、对账差错都没有系统兜底。</div></div><div class="card"><div class="rank">优先级 3</div><div class="nm">履约</div>
+          <div class="now">现状：仅空手行与佐川打通</div><div>单点已通；通用履约能力（服务履约 / 其它履约）不存在 → 每新增一个需履约的业务（租车、预约核销、门票核销）都要重接一次。</div></div>
+      </div>
+    </section>
+
+    <section id="facts">
+      <h2>事实清单（CTO 已确认）</h2>
+      <table><thead><tr><th style="width:180px">项</th><th>内容</th></tr></thead><tbody>
+        <tr><td>平台定位</td><td>把本地服务供给接进既有大渠道；不做自有流量采买，主分发靠渠道</td></tr><tr><td>分发面</td><td>外部渠道（中国客群）· 自有端（非中国/全球客群）· 社媒与 KOL（种草 + 分销）· B 端商户（能力输出落点）</td></tr><tr><td>在跑的业务</td><td>行前购、空手行（CTO 原话）</td></tr><tr><td>下一步重点</td><td>商户 SAAS —— 含已开发的优惠券、正在开发的退税</td></tr><tr><td>渠道对接形态</td><td>携程·空手行 = API 对接；东航·空手行 = 嵌入 H5；东航·优惠券 = API 对接</td></tr><tr><td>资金模式通则</td><td>API 对接 → 渠道收款后结算给我们；H5 嵌入 → 我们页面成交、钱直接到我们账</td></tr><tr><td>资金归属</td><td>所有业务的钱都走我们账（唯例外：留学缴费不过账）</td></tr><tr><td>股东即供给方</td><td>行前购涉及的机场、空手行的佐川物流，均为我们的股东 / 投资人</td></tr><tr><td>站点</td><td>日本站 bilionpass.com 已有；台湾站独立建站（规划中），对接 Canlead 的租车</td></tr><tr><td>系统成熟度</td><td>平台系统件 7 个全部自研在跑；基础能力 11 格里只有 4 格（会员/交易/资金/商品）在跑</td></tr><tr><td>VIP</td><td>移出版图（CTO：该场景&quot;不太对劲&quot;，先忽略）</td></tr>
+      </tbody></table>
+    </section>
+  </div>
+
+  <div id="view-block" hidden>
+    <div class="bpage" id="page-end-BilionPass" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>BilionPass <span class="badge run">在跑</span></h2>
+      <div class="kind">端</div>
+      <p class="oneliner">面向赴日中国旅客与全球游客的自有平台（C 端）。</p>
+      <div class="meta">服务对象：C 端旅客 · 中国客群与全球游客 · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>自有端构成</strong>：bilionpass.com（日本站）· APP · 微信小程序 · WEB。</li><li><strong>在自有端卖的东西</strong>：行前购（自营在线商城，在跑）、空手行（在跑）、留学缴费（跳转 fintech）。</li><li><strong>它覆盖的是另一批客群</strong>：渠道（携程、东航）都是中国的，只覆盖中国客群；自有端承担<strong>非中国客群 / 全球游客</strong>（空手行这类服务本身无国籍门槛）。</li><li><strong>台湾站</strong>：规划中，年底上线（<strong>官网不一定有</strong>）。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span><a href="#/b/sup-%E6%9C%BA%E5%9C%BA-%E7%BE%BD%E7%94%B0-%E6%88%90%E7%94%B0-%E5%85%B3%E8%A5%BF">机场（羽田 / 成田 / 关西）</a> · <a href="#/b/sup-%E4%BD%90%E5%B7%9D%E7%89%A9%E6%B5%81">佐川物流</a> · <a href="#/b/sup-fintech">fintech</a></div>
+      <div><span class="dl">中枢职能</span></div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E8%87%AA%E6%9C%89%E7%AB%AF-%E8%87%AA%E5%B7%B1%E5%8D%96">自有端（自己卖）</a></div>
+    </div>
+      <h4>下一步规划</h4><ul><li>台湾站年底上线（与日本站是<strong>独立建站</strong>，不是同一套系统多站点——业务形态不同）。</li><li>【待补】自有端要不要承担更多内容（目前渠道只接了空手行、优惠券）。</li></ul>
+      <h4>【判断】</h4><ul><li>自有端与渠道端<strong>按客群互补</strong>，不是主次关系——所以&quot;我们不做自有推广&quot;应理解为&quot;不自建流量，但自有端要接住渠道覆盖不到的那部分客群&quot;。</li></ul>
+      <h4>【待确认】</h4><ul><li>自有端与渠道侧的销量占比</li><li>台湾站到底有没有面向 C 端的官网</li></ul>
+    </div>
+<div class="bpage" id="page-end-商户平台-商户-SAAS" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>商户平台 · 商户 SAAS <span class="badge run">在跑</span> </h2>
+    <div class="kind">端</div>
+    <h4>要点</h4><ul><li>B 端 · 日本本地商户</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-end-管理平台-管理端" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>管理平台 · 管理端 <span class="badge run">在跑</span> </h2>
+    <div class="kind">端</div>
+    <h4>要点</h4><ul><li>A 端 · 我们自己公司（内部后台）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-exit-自有端-自己卖" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>自有端（自己卖）  </h2>
+    <div class="kind">分发出口</div>
+    <h4>要点</h4><ul><li>bilionpass.com（日本站）</li><li>APP</li><li>微信小程序</li><li>WEB</li><li>台湾站（规划）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-exit-外部渠道" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>外部渠道 <span class="badge run">在跑</span></h2>
+      <div class="kind">分发出口</div>
+      <p class="oneliner">内容池的主要分发去向——我们以&quot;服务供给商&quot;的身份把内容接进渠道，丰富渠道自己的能力。</p>
+      <div class="meta">服务对象：渠道的中国客群（携程用户、东航会员） · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>目前只接了 3 条</strong>：携程 → 空手行（<strong>API 对接</strong>）；东航 → 空手行（<strong>嵌入 H5 页面</strong>）；东航 → 优惠券（<strong>人工上传</strong>，券信息/券码由我们人工传到东航后台，没有系统对接）。</li><li><strong>三种形态</strong>：上架销售 · 会员权益 · 积分消耗（暂不涉及联合营销）。例：酒店给到东航可作为<strong>会员权益 / 积分消耗</strong>。</li><li><strong>资金模式由接入形态决定</strong>（通则）：<strong>API 对接</strong> → 渠道收款后按周期结算给我们；<strong>H5 嵌入</strong> → 我们页面成交、钱直接到我们账。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span></div>
+      <div><span class="dl">中枢职能</span>③ 资金与结算 · ④ 分发与授权</div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E5%A4%96%E9%83%A8%E6%B8%A0%E9%81%93">外部渠道</a></div>
+    </div>
+      <h4>下一步规划</h4><ul><li><strong>渠道扩（把门票/酒店等接给更多渠道）：等商务侧计划</strong>，不列入技术规划。</li><li>【待补】现有 3 条里，优惠券那条要不要从人工上传改成系统对接。</li></ul>
+      <h4>【判断】</h4><ul><li><strong>授权的真实维度是「渠道 × 内容 × 形态」</strong>，不是&quot;渠道 × 业务&quot;——同一份内容、不同渠道、不同形态（空手行在携程是上架销售，酒店在东航可能是权益/积分）。</li><li>内容池有 9 块内容，<strong>真正上渠道的只有 2 块</strong>（空手行、优惠券），差距很大。</li></ul>
+      <h4>【待确认】</h4><ul><li>哪些渠道能拿哪些内容、以什么形态给</li><li>渠道佣金怎么结（是否抽成、周期）</li></ul>
+    </div>
+<div class="bpage" id="page-exit-社媒与-KOL" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>社媒与 KOL  </h2>
+    <div class="kind">分发出口</div>
+    <h4>要点</h4><ul><li>自营社媒账号</li><li>KOL 分销（规划）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-行前购" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>行前购 <span class="badge run">在跑</span></h2>
+      <div class="kind">产品与服务内容</div>
+      <p class="oneliner">机场免税店线上下单、离境时在机场取货。</p>
+      <div class="meta">服务对象：赴日中国旅客 · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>性质 = 代运营</strong>：系统是<strong>我方自研</strong>（C 端 + B 端），货是<strong>免税店的</strong>，钱<strong>过我们账</strong>，运营方<strong>也是我们公司</strong>（B 端后台给机场运营方用，管商品与订单）。</li><li><strong>商品与库存</strong>：通过 <strong>API 从免税店系统同步</strong>——权威源在免税店那边，我们做的是同步、映射、上架、下单。</li><li><strong>机场</strong>：羽田 / 成田 / 关西；<strong>机场是我们的股东 / 投资人</strong>。</li><li><strong>货架位置</strong>：目前只在<strong>自有端</strong>（我们自营的在线商城）；<strong>渠道侧尚未推商品销售</strong>。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span><a href="#/b/sup-%E6%9C%BA%E5%9C%BA-%E7%BE%BD%E7%94%B0-%E6%88%90%E7%94%B0-%E5%85%B3%E8%A5%BF">机场（羽田 / 成田 / 关西）</a></div>
+      <div><span class="dl">中枢职能</span>① 商品与库存 · ③ 资金与结算</div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E8%87%AA%E6%9C%89%E7%AB%AF-%E8%87%AA%E5%B7%B1%E5%8D%96">自有端（自己卖）</a></div>
+    </div><h4>子图表</h4><svg viewBox="0 0 1120 84" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="30" y="38" font-size="12.5" fill="#1f2937">免税店供货（API 同步）</text>
+  <line x1="269" y1="42" x2="289" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="297" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="309" y="38" font-size="12.5" fill="#1f2937">我们运营上架</text>
+  <line x1="548" y1="42" x2="568" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="576" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="588" y="38" font-size="12.5" fill="#1f2937">旅客在自有商城下单</text>
+  <line x1="827" y1="42" x2="847" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="855" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="867" y="38" font-size="12.5" fill="#1f2937">离境时机场取货</text>
+</svg>
+      <h4>下一步规划</h4><ul><li><strong>12/30 前：关西机场行前购上线。</strong></li><li>【待补】羽田 / 成田 现在是否已在跑（关西是第三个，还是其中一个还没上）。</li></ul>
+      <h4>【判断】</h4><ul><li>行前购和空手行虽然同属&quot;我们闭环&quot;，但<strong>外包出去的东西不一样</strong>：行前购外包的是<strong>货</strong>，空手行外包的是<strong>运力</strong>——架构上关心的东西不同（前者关心货的信息与结算，后者关心履约过程与状态）。</li></ul>
+      <h4>【待确认】</h4><ul><li>羽田 / 成田 的现状</li><li>为什么渠道侧还没推行前购（战略选择还是受货源限制）</li></ul>
+    </div>
+<div class="bpage" id="page-b-空手行" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>空手行 <span class="badge run">在跑</span></h2>
+      <div class="kind">产品与服务内容</div>
+      <p class="oneliner">旅客到机场后把行李交给我们，我们定时送到酒店——让旅客空手出行。</p>
+      <div class="meta">服务对象：既有 C 端旅客（经渠道与自有端） · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>供给</strong>：与<strong>佐川物流</strong>合作履约（佐川是我们的<strong>股东</strong>）；业务系统由我们自研。</li><li><strong>分发</strong>：携程（<strong>API 对接</strong>）、东航（<strong>嵌入 H5 页面</strong>）、自有端（也在卖）。</li><li><strong>资金</strong>：钱走我们账。携程模式 = 渠道收款后结算给我们；东航 H5 = 我们页面成交、钱直接到我们账。之后再与佐川分账。</li><li><strong>履约</strong>：已与佐川系统 <strong>API 打通，线上在跑</strong>——这是目前唯一跑通的履约链路。</li><li><strong>自有端的意义</strong>：渠道（携程/东航）只覆盖中国客群；空手行这类服务本身无国籍门槛，自有端可面向<strong>全球游客</strong>。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span>机场（含免税店） · <a href="#/b/sup-%E4%BD%90%E5%B7%9D%E7%89%A9%E6%B5%81">佐川物流</a></div>
+      <div><span class="dl">中枢职能</span>② 订单与履约编排 · ③ 资金与结算 · ④ 分发与授权</div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E5%A4%96%E9%83%A8%E6%B8%A0%E9%81%93">外部渠道</a> · <a href="#/b/sys-%E8%87%AA%E6%9C%89%E7%AB%AF">自有端</a></div>
+    </div><h4>子图表</h4><svg viewBox="0 0 1120 84" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="30" y="38" font-size="12.5" fill="#1f2937">旅客在机场交行李</text>
+  <line x1="269" y1="42" x2="289" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="297" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="309" y="38" font-size="12.5" fill="#1f2937">我们接单</text>
+  <line x1="548" y1="42" x2="568" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="576" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="588" y="38" font-size="12.5" fill="#1f2937">佐川运送</text>
+  <line x1="827" y1="42" x2="847" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="855" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="867" y="38" font-size="12.5" fill="#1f2937">送达酒店</text>
+</svg>
+      <h4>下一步规划</h4><ul><li>【待补】服务范围与时效的目标（目前只知道&quot;机场 → 酒店、指定时间内送达&quot;）。</li><li>【待补】是否要把这条链路作为其他业务接渠道的<strong>复用样板</strong>。</li></ul>
+      <h4>【判断】</h4><ul><li>空手行是<strong>目前唯一同时跑通&quot;渠道对接 + 履约编排&quot;的业务</strong>，因此它是这两件事的<strong>现成样板</strong>——其他业务接渠道、接履约时，最省力的做法是先看空手行是怎么接的。</li><li>它是&quot;两条分发线互补&quot;的最好例子：渠道拿中国客群，自有端拿全球游客。</li></ul>
+      <h4>【待确认】</h4><ul><li>服务范围与时效（只能机场→酒店？几小时内送达？）</li><li>计费方式（按件 / 按重 / 按距离）</li><li>自有端与渠道侧的销量占比</li></ul>
+    </div>
+<div class="bpage" id="page-b-门票" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>门票 <span class="badge partial">对接中</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：合作分销</li><li>供给：JTR</li><li>分发：渠道侧未落地</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-酒店" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>酒店 <span class="badge partial">对接中</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：合作分销</li><li>供给：Jalan</li><li>分发：渠道侧未落地</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-租-包车" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>租 / 包车 <span class="badge plan">未上线</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：合作分销</li><li>供给：Canlead（台湾）</li><li>分发：渠道侧未落地</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-优惠券" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>优惠券 <span class="badge partial">待推广</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：能力输出</li><li>供给：自建能力</li><li>分发：东航（人工上传）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-退税" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>退税 <span class="badge dev">开发中</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：能力输出</li><li>供给：自建能力</li><li>分发：未落地（12/30 上线）</li></ul>
+    
+    <h4>子图表</h4><svg viewBox="0 0 1120 84" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="30" y="38" font-size="12.5" fill="#1f2937">商户办退税 · 消费 10000</text>
+  <line x1="269" y1="42" x2="289" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="297" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="309" y="38" font-size="12.5" fill="#1f2937">退税 1000 进我们账</text>
+  <line x1="548" y1="42" x2="568" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="576" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="588" y="38" font-size="12.5" fill="#1f2937">游客账户 850</text>
+  <line x1="827" y1="42" x2="847" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="855" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="867" y="38" font-size="12.5" fill="#1f2937">我们留 150</text>
+</svg>
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-留学缴费" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>留学缴费 <span class="badge run">在跑</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：引流挂链</li><li>供给：fintech</li><li>分发：自有端（跳转）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-b-行程规划" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>行程规划 <span class="badge partial">浅实现</span> </h2>
+    <div class="kind">产品与服务内容</div>
+    <h4>要点</h4><ul><li>所属组：平台功能</li><li>供给：自建（大模型）</li><li>分发：自有端</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-机场-羽田-成田-关西" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>机场（羽田 / 成田 / 关西）  <span class="tag">股东</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>免税店货 · 取货点</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-佐川物流" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>佐川物流 <span class="badge run">在跑</span></h2>
+      <div class="kind">合作供给方</div>
+      <p class="oneliner">日本最大的物流服务商（对标顺丰），是我们的<strong>股东 / 投资人</strong>。</p>
+      <div class="meta">服务对象：空手行的行李履约 · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>角色</strong>：空手行的履约方——旅客在机场交行李，佐川负责按指定时间送到酒店。</li><li><strong>对接状态</strong>：已与佐川系统 <strong>API 打通、线上在跑</strong>——这是目前<strong>唯一跑通的履约链路</strong>。</li><li><strong>关系</strong>：<strong>股东 / 投资人</strong>（不只是供应商）。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span></div>
+      <div><span class="dl">中枢职能</span>② 订单与履约编排</div>
+      <div><span class="dl">分发线</span></div>
+    </div>
+      <h4>下一步规划</h4><ul><li>【待补】是否有扩容/更多服务类型（如反向寄送）的规划。</li></ul>
+      <h4>【判断】</h4><ul><li>因为佐川是股东，&quot;单点依赖&quot;这个说法要改口径——<strong>它不是可能跑掉的供应商，而是关联方</strong>，风险性质是治理与利益分配，不是替换风险。</li></ul>
+      <h4>【待确认】</h4><ul><li>计费方式（按件 / 按重 / 按距离）</li><li>服务范围与时效（只能机场→酒店？几小时内送达？）</li></ul>
+    </div>
+<div class="bpage" id="page-sup-JTR" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>JTR  <span class="tag">已签约</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>门票</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-Jalan" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>Jalan  <span class="tag">已签约</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>酒店</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-Canlead" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>Canlead  <span class="tag">规划</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>租车（台湾）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-fintech" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>fintech  <span class="tag">合作</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>留学生跨境汇款</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sup-日本出款合作方" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>日本出款合作方  <span class="tag">合作</span></h2>
+    <div class="kind">合作供给方</div>
+    <h4>要点</h4><ul><li>退税打款到游客账户（先借后自建）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-综合平台-Portal" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>综合平台 Portal  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>旅客 web（PC + H5）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-商户-SAAS" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>商户 SAAS  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>退税 · 优惠券 · 预约</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-管理端" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>管理端  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>内部后台 · 渠道权限</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-综合平台-API" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>综合平台 API <span class="badge run">在跑</span></h2>
+      <div class="kind">自有平台系统</div>
+      <p class="oneliner">对外的数据出口——外部合作方通过它拉取我们分享的数据。</p>
+      <div class="meta">服务对象：外部合作方（渠道、供给方） · 来源：CTO 口述</div>
+      <h4>现状</h4><ul><li><strong>角色</strong>：不是&quot;渠道进来下单的入口&quot;，而是<strong>我们对外的数据出口</strong>：合作方通过它获取我们分享的数据。</li><li><strong>方向</strong>：以&quot;我们 → 合作方&quot;为主（携程/东航这类渠道的产品数据出去）；配合起来是&quot;产品数据出去、订单回来&quot;。</li><li><strong>状态</strong>：自研、在跑。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span></div>
+      <div><span class="dl">中枢职能</span>④ 分发与授权</div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E5%A4%96%E9%83%A8%E6%B8%A0%E9%81%93">外部渠道</a></div>
+    </div>
+      <h4>下一步规划</h4><ul><li>【待补】要对外分享哪些数据（商品/价格/库存/订单）。</li></ul>
+      <h4>【判断】</h4><ul><li>它是<strong>渠道对接能力</strong>的技术承载之一——你们的核心竞争力（渠道侧对接）主要就落在它和 Portal 上。</li></ul>
+      <h4>【待确认】</h4><ul><li>具体分享什么数据给谁</li><li>对外接口的授权与限流怎么做</li></ul>
+    </div>
+<div class="bpage" id="page-sys-行前购系统" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>行前购系统  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>C 端 + B 端（机场运营方用）</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-空手行系统" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>空手行系统  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>下单 + 佐川履约对接</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-sys-自有端" hidden>
+    <a class="backlink" href="#/ov">← 返回业务全景</a>
+    <h2>自有端  </h2>
+    <div class="kind">自有平台系统</div>
+    <h4>要点</h4><ul><li>WEB / APP / 小程序</li></ul>
+    
+    
+    <h4>下一步规划</h4><div class="todo">【待补】这一块的现状、规划、依赖关系还没整理。素材见 <code>docs/业务与系统全貌备忘.md</code> 与 <code>docs/平台大框架.md</code>。</div>
+  </div>
+<div class="bpage" id="page-blk-③-资金与结算" hidden>
+      <a class="backlink" href="#/ov">← 返回业务全景</a>
+      <h2>③ 资金与结算 <span class="badge partial">部分（资金在跑 / 结算手工）</span></h2>
+      <div class="kind">中枢（不在全景图上，从左侧导航进）</div>
+      <p class="oneliner">所有业务的收款、分账、对账——平台的主动脉。</p>
+      <div class="meta">服务对象：全部业务的旅客资金与供给方分账 · 来源：CTO 口述 + 已确认的资金模式通则</div>
+      <h4>现状</h4><ul><li><strong>所有业务的钱都走我们账</strong>（唯一例外：<code>留学缴费</code>，钱不过账）。</li><li><strong>资金模式由集成形态决定</strong>（已确认的通则）：<strong>API 对接</strong> → 渠道收款后按周期结算给我们；<strong>H5 嵌入</strong> → 我们页面成交、钱直接到我们账。</li><li><strong>对手方是双向的</strong>：对<strong>渠道</strong>可能收也可能付（有的渠道结算给我们，有的我们付佣金给渠道）；对<strong>供给方</strong>是付（分账 / 佣金 / 手续费）。</li><li><strong>规则随&quot;渠道 × 业务&quot;变</strong>：门票酒店按营业额 <strong>5% 抽佣</strong>（初步）；退税收<strong>退税额的 15%</strong> 手续费（例：消费 10000 → 退税 1000 → 退游客 850、我们留 150）。</li><li><strong>结算现状：手工对账。</strong> 风控现状：<strong>无</strong>。</li><li>佣金结算目前<strong>不是系统自动分账</strong>。</li></ul>
+      <h4>依赖 / 协作</h4><div class="deps">
+      <div><span class="dl">供给方</span>机场（含免税店） · <a href="#/b/sup-%E4%BD%90%E5%B7%9D%E7%89%A9%E6%B5%81">佐川物流</a> · <a href="#/b/sup-JTR">JTR</a> · <a href="#/b/sup-Jalan">Jalan</a> · <a href="#/b/sup-Canlead">Canlead</a></div>
+      <div><span class="dl">中枢职能</span>④ 分发与授权（决定谁能卖、怎么结） · ⑧ 账号与权限（KOL 分佣要归因） · ⑨ 主数据</div>
+      <div><span class="dl">分发线</span><a href="#/b/exit-%E5%A4%96%E9%83%A8%E6%B8%A0%E9%81%93">外部渠道</a> · <a href="#/b/sys-%E8%87%AA%E6%9C%89%E7%AB%AF">自有端</a> · 社媒与 KOL（KOL 分佣）</div>
+    </div><h4>子图表</h4><svg viewBox="0 0 1120 84" width="100%" role="img">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd3de"/></marker></defs>
+  <rect x="18" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="30" y="38" font-size="12.5" fill="#1f2937">旅客付款</text>
+  <line x1="269" y1="42" x2="289" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="297" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="309" y="38" font-size="12.5" fill="#1f2937">我们代收</text>
+  <line x1="548" y1="42" x2="568" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="576" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="588" y="38" font-size="12.5" fill="#1f2937">分账给供给方</text>
+  <line x1="827" y1="42" x2="847" y2="42" stroke="#cbd3de" stroke-width="1.4" marker-end="url(#ah)"/>
+  <rect x="855" y="16" width="245" height="52" rx="9" fill="#f6faff" stroke="#5b8def"/>
+  <text x="867" y="38" font-size="12.5" fill="#1f2937">与渠道/供给方对账</text>
+</svg>
+      <h4>下一步规划</h4><ul><li><strong>这是 CTO 确认的第一优先级</strong>（排序：结算 &gt; 风控 &gt; 履约）。</li><li>【待补】系统化的范围：先做哪些对手方、哪些业务。</li><li>【待补】合规与牌照问题（全业务代收 + 多方双向分账）。</li></ul>
+      <h4>【判断】</h4><ul><li>结算的复杂度 = <strong>对手方 × 方向 × 规则 × 地域货币</strong>，手工在这四个维度上不可持续。</li><li><strong>渠道授权与结算规则是同一个矩阵的两个面</strong>（都由&quot;渠道 × 业务&quot;决定）——两者应当一起设计，否则会各改各的、互相不一致。</li><li>KOL 分销会把&quot;授权 + 结算 + 身份&quot;三件事同时逼上台面：渠道只有几家，KOL 可能几十上百个。</li></ul>
+      <h4>【待确认】</h4><ul><li>合规 / 牌照：中日（未来中日台）两侧是否有支付/资金资质约束？</li><li>支付方式（微信 / 支付宝 / 信用卡 / 日本本地支付）</li><li>退款 / 售后谁承担（门票酒店取消政策）</li><li>给股东方（机场、佐川）的分账比例是否与普通合作方不同</li></ul>
+    </div>
+  </div>
+</main>
+<script>
+  function route() {
+    var h = decodeURIComponent(location.hash || '');
+    var m = h.match(/^#\/b\/(.+)$/);
+    var ov = document.getElementById('view-overview');
+    var vb = document.getElementById('view-block');
+    if (m) {
+      var want = 'page-' + m[1], found = false;
+      document.querySelectorAll('.bpage').forEach(function (p) {
+        var on = p.id === want; p.hidden = !on; if (on) found = true;
+      });
+      ov.hidden = true; vb.hidden = !found;
+      if (found) window.scrollTo(0, 0);
+    } else {
+      ov.hidden = false; vb.hidden = true;
+      var anchor = h.replace(/^#\//, '#');
+      if (anchor && anchor !== '#ov') { var el = document.querySelector(anchor); if (el) el.scrollIntoView(); }
+    }
+  }
+  window.addEventListener('hashchange', route);
+  document.addEventListener('click', function (e) {
+    var g = e.target.closest ? e.target.closest('[data-block]') : null;
+    if (g) { location.hash = '#/b/' + encodeURIComponent(g.getAttribute('data-block')); e.preventDefault(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    var g = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('data-block');
+    if (g) location.hash = '#/b/' + encodeURIComponent(g);
+  });
+  route();
+</script>
+</body></html>

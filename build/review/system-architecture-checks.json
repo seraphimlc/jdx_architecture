@@ -1,0 +1,149 @@
+{
+  "date": "2026-09-30",
+  "architectureRoute": "#/arch",
+  "appSystems": 5,
+  "foundationServices": 9,
+  "technicalDataCapabilities": 2,
+  "productBoundaries": 2,
+  "uniqueExplanationLinks": 32,
+  "linkChecks": [
+    {
+      "title": "综合平台 Portal",
+      "visibleCount": 1
+    },
+    {
+      "title": "空手行系统",
+      "visibleCount": 1
+    },
+    {
+      "title": "综合平台 API",
+      "visibleCount": 1
+    },
+    {
+      "title": "商户平台",
+      "visibleCount": 1
+    },
+    {
+      "title": "管理端",
+      "visibleCount": 1
+    },
+    {
+      "title": "空手行",
+      "visibleCount": 1
+    },
+    {
+      "title": "行程规划",
+      "visibleCount": 1
+    },
+    {
+      "title": "优惠券",
+      "visibleCount": 1
+    },
+    {
+      "title": "退税",
+      "visibleCount": 1
+    },
+    {
+      "title": "门票",
+      "visibleCount": 1
+    },
+    {
+      "title": "酒店",
+      "visibleCount": 1
+    },
+    {
+      "title": "商户能力输出",
+      "visibleCount": 1
+    },
+    {
+      "title": "分发与授权",
+      "visibleCount": 1
+    },
+    {
+      "title": "留学缴费",
+      "visibleCount": 1
+    },
+    {
+      "title": "账号与权限",
+      "visibleCount": 1
+    },
+    {
+      "title": "订单与履约编排",
+      "visibleCount": 1
+    },
+    {
+      "title": "资金与结算",
+      "visibleCount": 1
+    },
+    {
+      "title": "商品与库存",
+      "visibleCount": 1
+    },
+    {
+      "title": "内容与获客",
+      "visibleCount": 1
+    },
+    {
+      "title": "风控与合规",
+      "visibleCount": 1
+    },
+    {
+      "title": "行前购系统",
+      "visibleCount": 1
+    },
+    {
+      "title": "机场（羽田 / 成田 / 关西）",
+      "visibleCount": 1
+    },
+    {
+      "title": "行前购",
+      "visibleCount": 1
+    },
+    {
+      "title": "外部渠道",
+      "visibleCount": 1
+    },
+    {
+      "title": "佐川物流",
+      "visibleCount": 1
+    },
+    {
+      "title": "JTR",
+      "visibleCount": 1
+    },
+    {
+      "title": "Jalan",
+      "visibleCount": 1
+    },
+    {
+      "title": "fintech",
+      "visibleCount": 1
+    },
+    {
+      "title": "Canlead",
+      "visibleCount": 1
+    },
+    {
+      "title": "台湾站",
+      "visibleCount": 1
+    },
+    {
+      "title": "日本站",
+      "visibleCount": 1
+    },
+    {
+      "title": "大陆站",
+      "visibleCount": 1
+    }
+  ],
+  "brokenArchitectureLinks": 0,
+  "duplicateIds": 0,
+  "duplicateNavigation": 0,
+  "mobile": {
+    "width": 390,
+    "documentWidth": 390
+  },
+  "expandedCanvas": true,
+  "productIsolation": "PASS",
+  "source": "assets/jdx.png + confirmed updates"
+}

@@ -1,0 +1,157 @@
+{
+  "checked_at": "2026-10-01T15:29:55.182795+00:00",
+  "action": "update",
+  "adapter": "static",
+  "artifact_dir": "docs/site",
+  "target_url": "https://jdx.visitworld.me",
+  "manifest_digest": "9d75a63a04e8cde9166393915ba4c08d4af0d1dc15bd65c1e4e5a9678a09a61d",
+  "plan_digest": "25673b991d38e942da62b3c93aa38c249daa0dd9512cc379326fd7a08e0b7511",
+  "confirmation_required": false,
+  "confirmation_reasons": [],
+  "certificate_state": "usable",
+  "tls_verified": true,
+  "current_release_from_registry": "c21c77ceb29d4beaaf7b19e446fb4d83",
+  "current_digest_from_registry": "d633fcc2088a191889563034f4e56648b588852663ef9716c98c13874f70faba",
+  "public_body_sha256": "d633fcc2088a191889563034f4e56648b588852663ef9716c98c13874f70faba",
+  "project_responses": [
+    {
+      "host": "jdx.visitworld.me",
+      "url": "https://jdx.visitworld.me/",
+      "scheme": "https",
+      "status": "200",
+      "exit": 0,
+      "location": null,
+      "stderr": ""
+    },
+    {
+      "host": "jdx.visitworld.me",
+      "url": "http://jdx.visitworld.me/",
+      "scheme": "http",
+      "status": "301",
+      "exit": 0,
+      "location": "https://jdx.visitworld.me/",
+      "stderr": ""
+    }
+  ],
+  "other_app_responses": [
+    {
+      "host": "fbm.visitworld.me",
+      "scheme": "https",
+      "status": "000",
+      "exit": 60,
+      "location": null
+    },
+    {
+      "host": "fbm.visitworld.me",
+      "scheme": "http",
+      "status": "404",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "kol.visitworld.me",
+      "scheme": "https",
+      "status": "000",
+      "exit": 60,
+      "location": null
+    },
+    {
+      "host": "kol.visitworld.me",
+      "scheme": "http",
+      "status": "404",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "ocr.visitworld.me",
+      "scheme": "https",
+      "status": "000",
+      "exit": 60,
+      "location": null
+    },
+    {
+      "host": "ocr.visitworld.me",
+      "scheme": "http",
+      "status": "404",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "puyuan.visitworld.me",
+      "scheme": "https",
+      "status": "200",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "puyuan.visitworld.me",
+      "scheme": "http",
+      "status": "301",
+      "exit": 0,
+      "location": "https://puyuan.visitworld.me/"
+    },
+    {
+      "host": "quote.visitworld.me",
+      "scheme": "https",
+      "status": "000",
+      "exit": 60,
+      "location": null
+    },
+    {
+      "host": "quote.visitworld.me",
+      "scheme": "http",
+      "status": "404",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "thai.visitworld.me",
+      "scheme": "https",
+      "status": "200",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "thai.visitworld.me",
+      "scheme": "http",
+      "status": "301",
+      "exit": 0,
+      "location": "https://thai.visitworld.me/"
+    },
+    {
+      "host": "www.visitworld.me",
+      "scheme": "https",
+      "status": "200",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "www.visitworld.me",
+      "scheme": "http",
+      "status": "301",
+      "exit": 0,
+      "location": "https://www.visitworld.me/"
+    },
+    {
+      "host": "zhixu.visitworld.me",
+      "scheme": "https",
+      "status": "200",
+      "exit": 0,
+      "location": null
+    },
+    {
+      "host": "zhixu.visitworld.me",
+      "scheme": "http",
+      "status": "301",
+      "exit": 0,
+      "location": "https://zhixu.visitworld.me/"
+    }
+  ],
+  "remote_mutations": 0,
+  "commands": [
+    "inspect",
+    "plan"
+  ],
+  "deploy_performed": false,
+  "git_note": "This project directory has no .git repository; inspect and plan remain supported."
+}

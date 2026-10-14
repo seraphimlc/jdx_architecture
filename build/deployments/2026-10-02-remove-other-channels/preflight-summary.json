@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-02T13:31:36.867410+00:00",
+  "action": "update",
+  "adapter": "static",
+  "artifact_dir": "docs/site",
+  "target_url": "https://jdx.visitworld.me",
+  "manifest_digest": "9d75a63a04e8cde9166393915ba4c08d4af0d1dc15bd65c1e4e5a9678a09a61d",
+  "plan_digest": "227ef3a147c6ef0fe5a5e30f8b5e16ce2276a97ea6489507dfb78492e5c5b09f",
+  "confirmation_required": false,
+  "confirmation_reasons": [],
+  "certificate_state": "usable",
+  "tls_verified": true,
+  "certificate_expires": "Dec 30 08:15:10 2026 GMT",
+  "current_release_from_registry": "b963d19216ad442c867948cd10b8bf2d",
+  "current_digest_from_registry": "5a2051acd7eb10ef68c541b26aa69d738924aa1d3d3f20b044dce8d8ea2e16ff",
+  "responses": [
+    {
+      "url": "https://jdx.visitworld.me/",
+      "status": "200",
+      "exit": 0,
+      "location": null,
+      "stderr": ""
+    },
+    {
+      "url": "http://jdx.visitworld.me/",
+      "status": "301",
+      "exit": 0,
+      "location": "https://jdx.visitworld.me/",
+      "stderr": ""
+    }
+  ],
+  "remote_mutations": 0,
+  "commands": [
+    "inspect",
+    "plan"
+  ],
+  "deploy_performed": false
+}

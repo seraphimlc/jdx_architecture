@@ -1,0 +1,305 @@
+{
+  "date": "2026-09-29",
+  "overviewNodes": 29,
+  "pages": 40,
+  "chains": 4,
+  "sectionCount": 7,
+  "duplicateIds": 0,
+  "duplicateNavigation": 0,
+  "brokenRoutes": 0,
+  "externalResources": 0,
+  "desktopRouteChecks": [
+    {
+      "h1": "BilionPass",
+      "name": "BilionPass",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "商户平台 · 商户 SAAS",
+      "name": "商户平台 · 商户 SAAS",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "管理平台 · 管理端",
+      "name": "管理平台 · 管理端",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "自有端（自己卖）",
+      "name": "自有端（自己卖）",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "外部渠道",
+      "name": "外部渠道",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "社媒与 KOL",
+      "name": "社媒与 KOL",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "行前购",
+      "name": "行前购",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "空手行",
+      "name": "空手行",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "门票",
+      "name": "门票",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "酒店",
+      "name": "酒店",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "租 / 包车",
+      "name": "租 / 包车",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "优惠券",
+      "name": "优惠券",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "退税",
+      "name": "退税",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "留学缴费",
+      "name": "留学缴费",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "行程规划",
+      "name": "行程规划",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "机场（羽田 / 成田 / 关西）",
+      "name": "机场（羽田 / 成田 / 关西）",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "佐川物流",
+      "name": "佐川物流",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "JTR",
+      "name": "JTR",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "Jalan",
+      "name": "Jalan",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "Canlead",
+      "name": "Canlead",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "fintech",
+      "name": "fintech",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "日本出款合作方",
+      "name": "日本出款合作方",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "综合平台 Portal",
+      "name": "综合平台 Portal",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "商户 SAAS",
+      "name": "商户 SAAS",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "管理端",
+      "name": "管理端",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "综合平台 API",
+      "name": "综合平台 API",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "行前购系统",
+      "name": "行前购系统",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "空手行系统",
+      "name": "空手行系统",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "自有端",
+      "name": "自有端",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "商品与库存",
+      "name": "商品与库存",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "订单与履约编排",
+      "name": "订单与履约编排",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "资金与结算",
+      "name": "资金与结算",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "分发与授权",
+      "name": "分发与授权",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "商户能力输出",
+      "name": "商户能力输出",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "内容与获客",
+      "name": "内容与获客",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "风控与合规",
+      "name": "风控与合规",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "账号与权限",
+      "name": "账号与权限",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "主数据",
+      "name": "主数据",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "自建能力",
+      "name": "自建能力",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    },
+    {
+      "h1": "B 端商户",
+      "name": "B 端商户",
+      "overflow": false,
+      "sections": 7,
+      "visiblePages": 1
+    }
+  ],
+  "mobile": {
+    "viewport": 390,
+    "documentWidth": 390,
+    "search": true,
+    "sidebarHiddenWhenClosed": true
+  },
+  "repeatAnchorReturnTop": 53.9921875,
+  "legacyChecks": {
+    "mermaid": "PASS",
+    "ids": "PASS"
+  },
+  "browserPreview": "http://127.0.0.1:4173/"
+}

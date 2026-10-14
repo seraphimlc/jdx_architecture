@@ -1,0 +1,37 @@
+[
+  {
+    "site": "fbm",
+    "status": "000",
+    "exit": 60
+  },
+  {
+    "site": "kol",
+    "status": "000",
+    "exit": 60
+  },
+  {
+    "site": "ocr",
+    "status": "000",
+    "exit": 60
+  },
+  {
+    "site": "thai",
+    "status": "200",
+    "exit": 0
+  },
+  {
+    "site": "quote",
+    "status": "000",
+    "exit": 60
+  },
+  {
+    "site": "zhixu",
+    "status": "200",
+    "exit": 0
+  },
+  {
+    "site": "puyuan",
+    "status": "200",
+    "exit": 0
+  }
+]

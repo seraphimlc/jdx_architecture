@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-01",
+  "domains": 16,
+  "proposedServiceResponsibilities": 74,
+  "flowCount": 3,
+  "domainChecks": [
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "账号与权限"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "会员"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "商户与供给"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "渠道分发"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "商品与服务目录"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "价格与费用"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "库存与可售量"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "营销与优惠"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "交易与订单"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "支付与退款"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "履约与交付"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "售后与逆向"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "资金账务"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "结算与对账"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "风控与合规"
+    },
+    {
+      "count": 1,
+      "expanded": 1,
+      "title": "内容与归因"
+    }
+  ],
+  "flowChecks": [
+    {
+      "actual": [
+        "fulfillment",
+        "marketing",
+        "member",
+        "payment",
+        "pricing",
+        "transaction-order"
+      ],
+      "expected": [
+        "fulfillment",
+        "marketing",
+        "member",
+        "payment",
+        "pricing",
+        "transaction-order"
+      ],
+      "id": "domain-flow-flow-luggage-coupon",
+      "selected": 1
+    },
+    {
+      "actual": [
+        "fulfillment",
+        "inventory",
+        "member",
+        "payment",
+        "product-catalog",
+        "settlement-reconciliation",
+        "transaction-order"
+      ],
+      "expected": [
+        "fulfillment",
+        "inventory",
+        "member",
+        "payment",
+        "product-catalog",
+        "settlement-reconciliation",
+        "transaction-order"
+      ],
+      "id": "domain-flow-flow-shopping-taxfree",
+      "selected": 1
+    },
+    {
+      "actual": [
+        "fund-ledger",
+        "merchant-supply",
+        "payment",
+        "risk-compliance",
+        "settlement-reconciliation",
+        "transaction-order"
+      ],
+      "expected": [
+        "fund-ledger",
+        "merchant-supply",
+        "payment",
+        "risk-compliance",
+        "settlement-reconciliation",
+        "transaction-order"
+      ],
+      "id": "domain-flow-flow-tax-payout",
+      "selected": 1
+    }
+  ],
+  "desktopOverflow": false,
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "detailWidth": 332
+  },
+  "tasks": 6,
+  "originalExplanationPages": 41,
+  "deepLinkReload": true
+}

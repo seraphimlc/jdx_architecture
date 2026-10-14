@@ -1,0 +1,17 @@
+{
+  "certificate": "usable",
+  "site": {
+    "exists": true,
+    "owned": true,
+    "path": "/etc/nginx/sites-available/jdx.visitworld.me.conf"
+  },
+  "release": "b24f5b741d174a128aa4bd6b2107088e",
+  "previous_release": "517efd4d6f514397b322b9a3e0f13df2",
+  "content_digest": "22e727df558bd7f11902fdf928368cbc21d5bb8f09fc6dcb1acfc67b97e61ba9",
+  "reachability": {
+    "body_sha256": "22e727df558bd7f11902fdf928368cbc21d5bb8f09fc6dcb1acfc67b97e61ba9",
+    "healthy": true,
+    "status": 200
+  },
+  "other_registry_records_unchanged": true
+}

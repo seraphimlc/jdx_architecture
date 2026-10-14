@@ -1,0 +1,50 @@
+{
+  "verified": true,
+  "protocol": "TLSv1.3",
+  "certificate": {
+    "subject": [
+      [
+        [
+          "commonName",
+          "jdx.visitworld.me"
+        ]
+      ]
+    ],
+    "issuer": [
+      [
+        [
+          "countryName",
+          "US"
+        ]
+      ],
+      [
+        [
+          "organizationName",
+          "Let's Encrypt"
+        ]
+      ],
+      [
+        [
+          "commonName",
+          "YE1"
+        ]
+      ]
+    ],
+    "version": 3,
+    "serialNumber": "05B1C65351384C417A91C216AEB4D6F021C4",
+    "notBefore": "Oct  1 08:15:11 2026 GMT",
+    "notAfter": "Dec 30 08:15:10 2026 GMT",
+    "subjectAltName": [
+      [
+        "DNS",
+        "jdx.visitworld.me"
+      ]
+    ],
+    "caIssuers": [
+      "http://ye1.i.lencr.org/"
+    ],
+    "crlDistributionPoints": [
+      "http://ye1.c.lencr.org/69.crl"
+    ]
+  }
+}

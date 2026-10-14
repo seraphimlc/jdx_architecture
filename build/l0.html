@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>BilionPass 架构图 v2 · L0 总览</title></head>
+<body style="margin:0;width:1760px;height:1472px;background:#eef1f5;font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+  <div style="position:relative;width:1760px;height:1472px">
+    <svg width="1760" height="1472" style="position:absolute;left:0;top:0">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#b6bfcb"/></marker></defs>
+      <path d="M 252 725 C 252 753, 284 753, 284 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 462 725 C 462 753, 558 753, 558 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 672 725 C 672 753, 832 753, 832 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 882 725 C 882 753, 1106 753, 1106 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 1092 725 C 1092 753, 1380 753, 1380 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 1302 725 C 1302 753, 284 753, 284 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 1512 725 C 1512 753, 284 753, 284 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 252 725 C 252 753, 558 753, 558 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 462 725 C 462 753, 832 753, 832 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 672 725 C 672 753, 1106 753, 1106 777" fill="none" stroke="#b6bfcb" stroke-width="1.6" marker-end="url(#ah)"/>
+    </svg>
+<div style="position:absolute;left:40px;top:36px;width:1680px;height:92px;"><div style="font-size:30px;font-weight:600;letter-spacing:.2px;color:#1f2937">BilionPass 架构图 v2 · L0 总览</div>
+     <div style="margin-top:9px;font-size:13.5px;color:#6b7280">平台带 + 5 层 · 53 格 · 每格带 ID · 由 docs/v2/00-总览.md 与 03-关系矩阵.md 生成</div></div>
+<div style="position:absolute;left:40px;top:128px;width:708px;height:64px;border:1.5px solid #8f98a5;background:#fbfcfd;border-radius:14px;padding:12px 18px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08)"><div style="font-size:16px;font-weight:600;color:#39414d">BilionPass[综合平台，C端]</div>
+       <div style="margin-top:4px;font-size:11.5px;color:#6b7280">C 端</div></div>
+<div style="position:absolute;left:762px;top:128px;width:472px;height:64px;border:1.5px solid #8b5cf6;background:#f8f6ff;border-radius:14px;padding:12px 18px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08)"><div style="font-size:16px;font-weight:600;color:#5b21b6">商户平台[B端]</div>
+       <div style="margin-top:4px;font-size:11.5px;color:#6b7280">B 端</div></div>
+<div style="position:absolute;left:1248px;top:128px;width:472px;height:64px;border:1.5px solid #5b6472;background:#f5f7f9;border-radius:14px;padding:12px 18px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08)"><div style="font-size:16px;font-weight:600;color:#39414d">管理平台[A端]</div>
+       <div style="margin-top:4px;font-size:11.5px;color:#6b7280">A 端</div></div>
+<div style="position:absolute;left:40px;top:210px;width:1680px;height:130px;background:#ffffff;border:1px solid #e3e8ef;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)"></div>
+<div style="position:absolute;left:40px;top:210px;width:78px;height:130px;display:flex;align-items:center;justify-content:center;"><div style="writing-mode:vertical-rl;letter-spacing:7px;font-size:13.5px;font-weight:600;color:#94a0b0">入口</div></div>
+<div style="position:absolute;left:118px;top:210px;width:1px;height:130px;background:#e3e8ef"></div>
+<div style="position:absolute;left:152px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-01</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">WEB</div></div></div>
+<div style="position:absolute;left:314px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-02</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">APP</div></div></div>
+<div style="position:absolute;left:476px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-03</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">微信小程序</div></div></div>
+<div style="position:absolute;left:638px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-04</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">携程渠道</div></div></div>
+<div style="position:absolute;left:800px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-05</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">东航渠道</div></div></div>
+<div style="position:absolute;left:962px;top:224px;width:152px;height:46px;"><div style="border:1.5px dashed #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-06 <span style="color:#9aa4b2">· ?</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">其它渠道</div></div></div>
+<div style="position:absolute;left:1124px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-AI-01 <span style="color:#7c3aed">· AI 渠道</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">豆包</div></div></div>
+<div style="position:absolute;left:1286px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-AI-02 <span style="color:#7c3aed">· AI 渠道</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">元宝</div></div></div>
+<div style="position:absolute;left:1448px;top:224px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-AI-03 <span style="color:#7c3aed">· AI 渠道</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">ChatGPT</div></div></div>
+<div style="position:absolute;left:152px;top:280px;width:152px;height:46px;"><div style="border:1.5px solid #aab2bd;background:#fbfcfd;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-AI-04 <span style="color:#7c3aed">· AI 渠道</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#48505c">（预留）</div></div></div>
+<div style="position:absolute;left:314px;top:280px;width:152px;height:46px;"><div style="border:1.5px solid #8b5cf6;background:#f8f5ff;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-07</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#5b21b6">PC</div></div></div>
+<div style="position:absolute;left:476px;top:280px;width:152px;height:46px;"><div style="border:1.5px solid #8b5cf6;background:#f8f5ff;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-08</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#5b21b6">H5</div></div></div>
+<div style="position:absolute;left:638px;top:280px;width:152px;height:46px;"><div style="border:1.5px solid #8b5cf6;background:#f8f5ff;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-09</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#5b21b6">APP</div></div></div>
+<div style="position:absolute;left:800px;top:280px;width:152px;height:46px;"><div style="border:1.5px solid #5b6472;background:#f5f7f9;border-radius:22px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">EN-10</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#3c4553">PC</div></div></div>
+<div style="position:absolute;left:40px;top:354px;width:1680px;height:194px;background:#ffffff;border:1px solid #e3e8ef;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)"></div>
+<div style="position:absolute;left:40px;top:354px;width:78px;height:194px;display:flex;align-items:center;justify-content:center;"><div style="writing-mode:vertical-rl;letter-spacing:7px;font-size:13.5px;font-weight:600;color:#94a0b0">应用系统</div></div>
+<div style="position:absolute;left:118px;top:354px;width:1px;height:194px;background:#e3e8ef"></div>
+<div style="position:absolute;left:152px;top:368px;width:232px;height:78px;"><div style="border:1.5px solid #e8558a;background:#fff6fa;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-01</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#a3195b">行前购</div></div></div>
+<div style="position:absolute;left:394px;top:368px;width:232px;height:78px;"><div style="border:1.5px solid #ef8c1e;background:#fff9f0;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-02</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#96590a">空手行</div></div></div>
+<div style="position:absolute;left:636px;top:368px;width:232px;height:78px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-03</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">综合平台Portal</div></div></div>
+<div style="position:absolute;left:878px;top:368px;width:232px;height:78px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-04</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">综合平台API</div></div></div>
+<div style="position:absolute;left:1120px;top:368px;width:232px;height:78px;"><div style="border:1.5px dashed #ef8c1e;background:#fff9f0;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-05 <span style="color:#9aa4b2">· ?</span></div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#96590a">佐川物流</div></div></div>
+<div style="position:absolute;left:1362px;top:368px;width:232px;height:78px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-06</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">商户SAAS</div></div></div>
+<div style="position:absolute;left:152px;top:456px;width:232px;height:78px;"><div style="border:1.5px solid #e8558a;background:#fff6fa;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-07</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#a3195b">行前购</div></div></div>
+<div style="position:absolute;left:394px;top:456px;width:232px;height:78px;"><div style="border:1.5px solid #5b6472;background:#f5f7f9;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">AP-08</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#3c4553">管理端</div></div></div>
+<div style="position:absolute;left:40px;top:562px;width:1680px;height:162px;background:#ffffff;border:1px solid #e3e8ef;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)"></div>
+<div style="position:absolute;left:40px;top:562px;width:78px;height:162px;display:flex;align-items:center;justify-content:center;"><div style="writing-mode:vertical-rl;letter-spacing:7px;font-size:13.5px;font-weight:600;color:#94a0b0">业务场景</div></div>
+<div style="position:absolute;left:118px;top:562px;width:1px;height:162px;background:#e3e8ef"></div>
+<div style="position:absolute;left:152px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #e8558a;background:#fff6fa;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-01</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#a3195b">在线交易</div></div></div>
+<div style="position:absolute;left:362px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #ef8c1e;background:#fff9f0;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-02</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#96590a">物流托运</div></div></div>
+<div style="position:absolute;left:572px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-03</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">行程规划</div></div></div>
+<div style="position:absolute;left:782px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-04</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">线下优惠券</div></div></div>
+<div style="position:absolute;left:992px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-05</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">租/包车</div></div></div>
+<div style="position:absolute;left:1202px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-06</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">预约/预定</div></div></div>
+<div style="position:absolute;left:1412px;top:576px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-07</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">VIP</div></div></div>
+<div style="position:absolute;left:152px;top:648px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-08</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">留学缴费</div></div></div>
+<div style="position:absolute;left:362px;top:648px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-09</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">门票</div></div></div>
+<div style="position:absolute;left:572px;top:648px;width:200px;height:62px;"><div style="border:1.5px solid #d9a300;background:#fffcef;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-10</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#836600">退税</div></div></div>
+<div style="position:absolute;left:782px;top:648px;width:200px;height:62px;"><div style="border:1.5px solid #5b6472;background:#f5f7f9;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BZ-11</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#3c4553">渠道权限</div></div></div>
+<div style="position:absolute;left:40px;top:782px;width:1680px;height:190px;background:#ffffff;border:1px solid #e3e8ef;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)"></div>
+<div style="position:absolute;left:40px;top:782px;width:78px;height:190px;display:flex;align-items:center;justify-content:center;"><div style="writing-mode:vertical-rl;letter-spacing:7px;font-size:13.5px;font-weight:600;color:#94a0b0">服务能力</div></div>
+<div style="position:absolute;left:118px;top:782px;width:1px;height:190px;background:#e3e8ef"></div>
+<div style="position:absolute;left:152px;top:796px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-01</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">交易服务</div></div></div>
+<div style="position:absolute;left:426px;top:796px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-02</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">物流服务</div></div></div>
+<div style="position:absolute;left:700px;top:796px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-03</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">导购服务</div></div></div>
+<div style="position:absolute;left:974px;top:796px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-04</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">优惠券服务</div></div></div>
+<div style="position:absolute;left:1248px;top:796px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-05</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">租车服务</div></div></div>
+<div style="position:absolute;left:152px;top:882px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-06</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">预约服务</div></div></div>
+<div style="position:absolute;left:426px;top:882px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-07</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">留学缴费服务</div></div></div>
+<div style="position:absolute;left:700px;top:882px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-08</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">门票服务</div></div></div>
+<div style="position:absolute;left:974px;top:882px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">SC-09</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">退税服务</div></div></div>
+<div style="position:absolute;left:40px;top:1030px;width:1680px;height:276px;background:#ffffff;border:1px solid #e3e8ef;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)"></div>
+<div style="position:absolute;left:40px;top:1030px;width:78px;height:276px;display:flex;align-items:center;justify-content:center;"><div style="writing-mode:vertical-rl;letter-spacing:7px;font-size:13.5px;font-weight:600;color:#94a0b0">基础能力</div></div>
+<div style="position:absolute;left:118px;top:1030px;width:1px;height:276px;background:#e3e8ef"></div>
+<div style="position:absolute;left:152px;top:1044px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-01</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">会员服务</div></div></div>
+<div style="position:absolute;left:426px;top:1044px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-02</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">交易服务</div></div></div>
+<div style="position:absolute;left:700px;top:1044px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-03</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">营销服务</div></div></div>
+<div style="position:absolute;left:974px;top:1044px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-04</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">履约服务</div></div></div>
+<div style="position:absolute;left:1248px;top:1044px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-05</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">资金服务</div></div></div>
+<div style="position:absolute;left:152px;top:1130px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-06</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">结算服务</div></div></div>
+<div style="position:absolute;left:426px;top:1130px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-07</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">风控服务</div></div></div>
+<div style="position:absolute;left:700px;top:1130px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-08</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">商品服务</div></div></div>
+<div style="position:absolute;left:974px;top:1130px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-09</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">库存服务</div></div></div>
+<div style="position:absolute;left:1248px;top:1130px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-10</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">大模型</div></div></div>
+<div style="position:absolute;left:152px;top:1216px;width:264px;height:76px;"><div style="border:1.5px solid #5b8def;background:#f5f9ff;border-radius:10px;padding:9px 12px;box-shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.08);height:100%;overflow:hidden">
+    <div style="font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.3px;color:#a3adbb">BA-11</div>
+    <div style="margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:#2b5bb5">数据资产</div></div></div>
+<div style="position:absolute;left:40px;top:1328px;width:1680px;height:104px;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:15px 18px;box-shadow:0 1px 2px rgba(16,24,40,.04)"><div style="font-size:12.5px;color:#6b7280;line-height:1.9">
+      <div><b style="color:#1f2937">颜色 = 应用系统族</b><span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:#e8558a;margin:0 5px -1px 10px"></span>行前购<span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:#ef8c1e;margin:0 5px -1px 10px"></span>空手行 / 佐川物流<span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:#d9a300;margin:0 5px -1px 10px"></span>综合平台系<span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:#5b6472;margin:0 5px -1px 10px"></span>管理端<span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:#aab2bd;margin:0 5px -1px 10px"></span>C 端入口</div>
+      <div><b style="color:#1f2937">虚线边框</b> = 待作者确认（<code style="font-family:"SF Mono",ui-monospace,Menlo,monospace;background:#f2f4f7;border-radius:4px;padding:1px 4px">?</code>）或 AI 渠道 &nbsp;·&nbsp; <b style="color:#1f2937">实线箭头</b> = 业务场景 → 服务能力（v1 已有的 10 条）</div>
+      <div>其余关系（入口归属、场景↔系统、能力↔基础能力、跨端共用）见 <code style="font-family:"SF Mono",ui-monospace,Menlo,monospace;background:#f2f4f7;border-radius:4px;padding:1px 4px">docs/v2/03-关系矩阵.md</code></div>
+     </div></div>
+  </div>
+</body></html>

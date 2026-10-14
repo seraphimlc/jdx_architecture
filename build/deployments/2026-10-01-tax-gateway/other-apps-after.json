@@ -1,0 +1,146 @@
+[
+  {
+    "host": "fbm.visitworld.me",
+    "url": "https://fbm.visitworld.me/",
+    "scheme": "https",
+    "status": "000",
+    "exit": 60,
+    "location": null,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'fbm.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "host": "fbm.visitworld.me",
+    "url": "http://fbm.visitworld.me/",
+    "scheme": "http",
+    "status": "404",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "kol.visitworld.me",
+    "url": "https://kol.visitworld.me/",
+    "scheme": "https",
+    "status": "000",
+    "exit": 60,
+    "location": null,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'kol.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "host": "kol.visitworld.me",
+    "url": "http://kol.visitworld.me/",
+    "scheme": "http",
+    "status": "404",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "ocr.visitworld.me",
+    "url": "https://ocr.visitworld.me/",
+    "scheme": "https",
+    "status": "000",
+    "exit": 60,
+    "location": null,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'ocr.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "host": "ocr.visitworld.me",
+    "url": "http://ocr.visitworld.me/",
+    "scheme": "http",
+    "status": "404",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "puyuan.visitworld.me",
+    "url": "https://puyuan.visitworld.me/",
+    "scheme": "https",
+    "status": "200",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "puyuan.visitworld.me",
+    "url": "http://puyuan.visitworld.me/",
+    "scheme": "http",
+    "status": "301",
+    "exit": 0,
+    "location": "https://puyuan.visitworld.me/",
+    "stderr": ""
+  },
+  {
+    "host": "quote.visitworld.me",
+    "url": "https://quote.visitworld.me/",
+    "scheme": "https",
+    "status": "000",
+    "exit": 60,
+    "location": null,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'quote.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "host": "quote.visitworld.me",
+    "url": "http://quote.visitworld.me/",
+    "scheme": "http",
+    "status": "404",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "thai.visitworld.me",
+    "url": "https://thai.visitworld.me/",
+    "scheme": "https",
+    "status": "200",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "thai.visitworld.me",
+    "url": "http://thai.visitworld.me/",
+    "scheme": "http",
+    "status": "301",
+    "exit": 0,
+    "location": "https://thai.visitworld.me/",
+    "stderr": ""
+  },
+  {
+    "host": "www.visitworld.me",
+    "url": "https://www.visitworld.me/",
+    "scheme": "https",
+    "status": "200",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "www.visitworld.me",
+    "url": "http://www.visitworld.me/",
+    "scheme": "http",
+    "status": "301",
+    "exit": 0,
+    "location": "https://www.visitworld.me/",
+    "stderr": ""
+  },
+  {
+    "host": "zhixu.visitworld.me",
+    "url": "https://zhixu.visitworld.me/",
+    "scheme": "https",
+    "status": "200",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "zhixu.visitworld.me",
+    "url": "http://zhixu.visitworld.me/",
+    "scheme": "http",
+    "status": "301",
+    "exit": 0,
+    "location": "https://zhixu.visitworld.me/",
+    "stderr": ""
+  }
+]

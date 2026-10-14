@@ -1,0 +1,25 @@
+{
+  "adapter": "static",
+  "description": "BilionPass business and system architecture planning document.",
+  "display_name": "JDX BilionPass Architecture",
+  "hostname": "jdx.visitworld.me",
+  "project_id": "d0d0c4a5-42a9-4df7-b21d-2d750e6bd6e3",
+  "public": true,
+  "runtime": {
+    "expected_statuses": [
+      200
+    ],
+    "health_path": "/",
+    "persistent_dirs": [],
+    "required_secrets": [],
+    "spa_fallback": true,
+    "start": null,
+    "working_dir": "."
+  },
+  "schema_version": 1,
+  "slug": "jdx",
+  "source": {
+    "artifact_dir": "docs/site",
+    "build": null
+  }
+}

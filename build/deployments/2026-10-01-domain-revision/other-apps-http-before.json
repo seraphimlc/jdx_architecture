@@ -1,0 +1,51 @@
+[
+  {
+    "site": "fbm",
+    "url": "http://fbm.visitworld.me/",
+    "status": "404",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "kol",
+    "url": "http://kol.visitworld.me/",
+    "status": "404",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "ocr",
+    "url": "http://ocr.visitworld.me/",
+    "status": "404",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "thai",
+    "url": "http://thai.visitworld.me/",
+    "status": "301",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "quote",
+    "url": "http://quote.visitworld.me/",
+    "status": "404",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "zhixu",
+    "url": "http://zhixu.visitworld.me/",
+    "status": "301",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "puyuan",
+    "url": "http://puyuan.visitworld.me/",
+    "status": "301",
+    "exit": 0,
+    "stderr": ""
+  }
+]

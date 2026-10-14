@@ -1,0 +1,51 @@
+[
+  {
+    "site": "fbm",
+    "url": "https://fbm.visitworld.me/",
+    "status": "000",
+    "exit": 60,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'fbm.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "site": "kol",
+    "url": "https://kol.visitworld.me/",
+    "status": "000",
+    "exit": 60,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'kol.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "site": "ocr",
+    "url": "https://ocr.visitworld.me/",
+    "status": "000",
+    "exit": 60,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'ocr.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "site": "thai",
+    "url": "https://thai.visitworld.me/",
+    "status": "200",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "quote",
+    "url": "https://quote.visitworld.me/",
+    "status": "000",
+    "exit": 60,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'quote.visitworld.me'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above."
+  },
+  {
+    "site": "zhixu",
+    "url": "https://zhixu.visitworld.me/",
+    "status": "200",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "site": "puyuan",
+    "url": "https://puyuan.visitworld.me/",
+    "status": "200",
+    "exit": 0,
+    "stderr": ""
+  }
+]

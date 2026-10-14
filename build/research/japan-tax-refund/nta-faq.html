@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<title>リファンド方式（税関確認結果）のFAQ｜国税庁</title>
+	<link href="/template/css/bootstrap.min.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+			<script src="/template/js/html5shiv.min.js"></script>
+			<script src="/template/js/respond.min.js"></script>
+		<![endif]-->
+	<script src="/template/js/jquery.min.js"></script>
+	<script src="/template/js/bootstrap.min.js"></script>
+	<link href="/template/css/common.css" rel="stylesheet">
+	<link href="/template/css/import.css" rel="stylesheet">
+	<script src="/template/js/custom.js"></script>
+	<script src="/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/js/jquery.rwdImageMaps.min.js"></script>
+
+	<script src="/template/js/include.js"></script>
+	<script>
+		$(function () {
+			$('area').hover(
+				function () { $(this).focus(); },
+				function () { $(this).blur(); }
+
+			)
+		});
+		$(document).ready(function (e) {
+			$('img[usemap]').rwdImageMaps();
+		});
+	</script>
+	<!-- 0025012-025 start -->
+	<style>
+		.add-news {
+			border: 2px solid #bf9000;
+			padding: 10px 1em;
+			background-color: #fff4d1;
+			border-radius: 16px;
+			margin-bottom: 2em;
+		}
+
+		.no-border-table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.no-border-table td {
+			border: 0;
+
+			vertical-align: top;
+		}
+
+		#bodyArea .no-border-table .col-no {
+			padding-left: 1em;
+			white-space: nowrap;
+			width: 1.2em;
+		}
+
+		#bodyArea .no-border-table .col-text {
+			width: auto;
+			padding-right: 1em;
+			padding-left: 0;
+		}
+
+		.info-table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.info-table th,
+		.info-table td {
+			border: 1px solid #999;
+			padding: 10px;
+			vertical-align: top;
+		}
+
+		.info-table th {
+			background-color: #f2f2f2;
+			text-align: center;
+		}
+
+		.info-table ul {
+			margin: 0;
+			padding-left: 1.2em;
+		}
+
+		#bodyArea .col-text img {
+			max-width: 100%;
+		}
+	</style>
+	<!-- 0025012-025 end -->
+</head>
+
+<body>
+	<noscript>すべての機能をご利用いただくにはJavascriptを有効にしてください。</noscript>
+	<div class="container">
+		<div id="header"></div>
+		<div class="wrap">
+			<div class="clearfix">
+				<div class="left-content contents">
+
+					<div id="contents">
+						<div class="imp-cnt" id="bodyArea">
+							<p class="skip"></p>
+							<ol class="breadcrumb">
+								<li><a href="/">ホーム</a></li>
+								<li><a href="/publication/index.htm">刊行物等</a></li>
+								<li><a href="/publication/pamph/01.htm">パンフレット・手引</a></li>
+								<li><a href="/publication/pamph/shohi/menzei/201805/0523.htm">輸出物品販売場における輸出免税について</a>
+								</li>
+								<li><a
+										href="/publication/pamph/shohi/menzei/201805/format/002.htm">輸出物品販売場制度のリファンド方式への見直し</a>
+								</li>
+								<li class="active">リファンド方式（税関確認結果）のFAQ</li>
+							</ol>
+
+							<div class="page-header" id="page-top">
+								<h1>リファンド方式（税関確認結果）のFAQ</h1>
+							</div>
+
+							<h2 id="q1">Q1　税関確認結果はどのように提供されるのですか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="2" class="col-no">A</td>
+										<td class="col-text">
+											　免税店の送受信用機器から国税庁の免税販売管理システムにリクエスト情報を送ることで、リクエスト情報に一致する税関確認結果が提供（レスポンス）されます（PULL型API連携）。<br>　リクエスト情報の送信方法の詳細については「<a
+												href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」（５税関確認情報API）をご確認いただき、自社で対応する（システムの構築、他社製品の購入）のか、承認送受信事業者への委託するのか、その方法について、ご検討ください。<br>　（参考イメージ図）
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text"><img
+												src="/publication/pamph/shohi/menzei/201805/format/002/img/Q1.svg"
+												alt=""></td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q2">Q2　税関確認結果として、どのような情報が提供されるのですか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="3" class="col-no">A</td>
+										<td class="col-text">
+											　免税販売管理システムから税関確認照会結果通知において、「税関確認情報区分」を提供しており、この「税関確認情報区分」には、次の２種類があります。
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											<table class="info-table">
+												<thead>
+													<tr>
+														<th>税関確認情報区分</th>
+														<th>内容</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>税関確認情報である<br>「税関確認済」</td>
+														<td>
+															<ul>
+																<li>
+																	免税対象物品を持ち出す（輸出する）ことについて、
+																	譲渡日から90日以内に税関の確認を受けたもの
+																</li>
+															</ul>
+														</td>
+													</tr>
+													<tr>
+														<td>税関確認情報が提供されないことが<br>確定した情報である<br>「免税不可」</td>
+														<td>
+															<ul>
+																<li>
+																	税関での確認により免税対象物品を持ち出さない
+																	（輸出しない）ことが確認できたもの
+																</li>
+																<li>
+																	免税対象物品を持ち出す（輸出する）ことについて、
+																	譲渡日から90日以内に税関の確認を受けることができなかったもの
+																</li>
+															</ul>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											　上記のいずれかに該当する場合のみ、税関確認結果として提供します。「税関確認情報件数」が０件である場合、そのリクエスト時点において、その免税購入対象物品を持ち出す（輸出する）ことについて、税関の確認をまだ受けていないことなどが考えられます。<br>
+											（参考）
+											<ul class="lst lst_dot mt0i" style="margin: 0;">
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」別紙Ａ２－１、Ｂ２－１
+												</li>
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a02">輸出物品販売場制度に関するＱ＆Ａ（リファンド方式・概要編）</a>」問36-2、問37
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q3">Q3　税関確認結果を取得するためにどのようなことが必要ですか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="4" class="col-no">A</td>
+										<td class="col-text">
+											　免税店が税関確認結果を取得するために必要な手続及びその手順は、次のフロー図のとおりです。<br>
+											　なお、税関確認結果の取得を承認送受信事業者へ委託する場合、３～７については、承認送受信事業者において行うことになります。<br>
+											　（フロー図）
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text"><img
+												src="/publication/pamph/shohi/menzei/201805/format/002/img/Q3.svg"
+												alt=""></td>
+									</tr>
+									<tr>
+										<td class="col-text">１～２　輸出物品販売場の許可申請及び識別符号の通知の受領<br>
+											　免税販売管理システムから税関確認結果の取得を行う際、免税店ごとの識別符号が必要となります（識別符号は、購入記録情報の送信を行う際にも必要となります。）。<br>
+											　この識別符号は、許可申請に基づき免税店の許可がなされた場合、その許可通知とともに通知されます（注1,2）。<br>
+											３　クライアント証明書のインストール<br>
+											　免税販売管理システムでは、購入記録情報の送信や税関確認結果の取得に際し、クライアント証明書による認証を行いますので、免税販売管理システムと直接送受信する場合には、免税販売管理システム専用のクライアント証明書の発行を受けて、その送受信する機器にインストールしておく必要があります。<br>
+											　クライアント証明書の発行が必要な場合、上記１の許可申請書にその旨を記載します。クライアント証明書の取得とインストールの詳細については「<a
+												href="/publication/pamph/shohi/menzei/certificate.htm">クライアント証明書の取得とインストール</a>」をご確認ください(注1,2)。<br>
+											４～５　購入記録情報の送信及び受信結果通知の受信<br>
+											　税関確認結果の登録は、免税販売管理システムに登録された購入記録情報に対して行います。エラー等により、送信した購入記録情報が免税販売管理システムに受け付けられなかった場合、税関確認の対象となる購入記録情報が無いことから、税関確認結果は登録されません。このため、購入記録情報が受け付けられたかどうか、受信結果通知を必ずご確認ください。<br>
+											　購入記録情報の送信方法及び受信結果通知の通知内容の確認方法については「<a
+												href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」（４　購入記録情報API）及び別紙２－３をご確認ください。
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											<table class="no-border-table" role="presentation">
+												<tbody>
+													<tr>
+														<td rowspan="2">（注）</td>
+														<td>1</td>
+														<td class="col-text">
+															　リファンド方式移行前の現行制度においては、「輸出物品販売場における購入記録情報の提供方法等の届出書」の提出後、識別符号の通知、必要に応じクライアント証明書の発行を行います。リファンド方式では、「輸出物品販売場における購入記録情報の提供方法等の届出書」は「輸出物品販売場許可申請書」に統合されます。リファンド方式における新たな申請書の様式や必要な添付書類については、詳細が確定次第、公開予定です。
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td class="col-text">
+															　リファンド方式への移行前に受領している識別符号及び発行を受けているクライアント証明書については、リファンド方式における購入記録情報の送信及び税関確認結果の取得の際に引き続き使用可能です。
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q3-1" style="display: grid; grid-template-columns: 3em 1fr;"><span class="q3-1left">Q3-1</span><span class="q3-1right">　購入記録情報の受信結果通知が返却されない場合、どうしたらよいですか。</span></h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="2" class="col-no">A</td>
+										<td class="col-text">
+											　免税販売管理システムにおいて、購入記録情報を受信してから受信結果通知を返却するまでの所要時間は、数秒から十秒程度を想定しています。想定時間を超えて、受信結果通知が返却されない場合は、通信エラー等が発生している可能性があります。
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											<table class="no-border-table" role="presentation">
+												<tbody>
+													<tr>
+														<td class="col-no">1</td>
+														<td class="col-text">
+															　HTTPステータスコード又は何らかのエラーメッセージが表示された場合<br>原因を解明の上、再送信してください。<br>
+															　なお、想定される原因につきましては、「<a
+																href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」の別紙7－３に掲載しておりますので、原因解明の参考としてください。
+														</td>
+													</tr>
+													<tr>
+														<td class="col-no">2</td>
+														<td class="col-text">
+															　HTTPステータスコード又はエラーメッセージが表示されなかった場合<br>
+															　通信エラー又は正常受信のいずれも想定されますので、同じ内容で再送信を行ってください。当初送信にかかる受信処理が正常に行われていた場合は、二次チェックエラー（「<a
+																href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」別紙５-３）が返却されますので、このエラーコードで当初送信が受け付けられたか、ご確認ください。
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q4">Q4　税関確認結果を照会することができる者に制限はありますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="3" class="col-no">A</td>
+										<td class="col-text">
+											　税関確認結果を照会（リクエスト）できるのは、免税店を経営する事業者及び承認送受信事業者となります。照会可能な税関確認結果の範囲については、次のとおりです。
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											<table class="info-table">
+												<thead>
+													<tr>
+														<th>照会者</th>
+														<th>照会可能な範囲</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>免税店を経営する事業者</td>
+														<td>経営する免税店の購入記録情報に係る税関確認結果</td>
+													</tr>
+													<tr>
+														<td>承認送受信事業者</td>
+														<td>免税店ごとに代理して送信した購入記録情報に係る税関確認結果</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="col-text">（参考）<br>
+											<ul class="lst lst_dot mt0i" style="margin: 0;">
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a02">輸出物品販売場制度に関するＱ＆Ａ（リファンド方式・概要編）</a>」問34、問35
+												</li>
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」別紙Ａ５－１、Ｂ５－１
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q5">Q5　税関確認結果の照会回数に制限はありますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td class="col-no">A</td>
+										<td class="col-text">　特に制限はありません。<br>　</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q6">Q6　税関確認結果はいつ登録されますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="2" class="col-no">A</td>
+										<td class="col-text">　税関確認結果は、次のいずれかの場合に登録されます。</td>
+									</tr>
+									<tr>
+										<td class="col-text">
+											<table class="no-border-table" role="presentation">
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td class="col-text">　免税対象物品を持ち出す（輸出する）ことが確認された場合</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td class="col-text">　税関での確認により免税対象物品を持ち出さない（輸出しない）ことが確認された場合
+														</td>
+													</tr>
+													<tr>
+														<td rowspan="5">3</td>
+														<td class="col-text">　免税対象物品を持ち出す（輸出する）ことについて、譲渡日から
+															90日以内に税関の確認を受けることができなかった場合</td>
+													</tr>
+													<tr>
+														<td>（イメージ図）</td>
+													</tr>
+													<tr>
+														<td><img
+																src="/publication/pamph/shohi/menzei/201805/format/002/img/Q6.svg"
+																alt=""></td>
+													</tr>
+													<tr>
+														<td>（参考）</td>
+													</tr>
+													<tr>
+														<td>
+															<ul class="lst lst_dot mt0i" style="margin: 0;">
+																<li>「<a
+																		href="/publication/pamph/shohi/menzei/201805/format/002.htm#a02">輸出物品販売場制度に関するＱ＆Ａ（リファンド方式・概要編</a>）」問18、問19
+																</li>
+															</ul>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q7">Q7　税関確認結果はいつまで照会できますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="2" class="col-no">A</td>
+										<td class="col-text">　リクエスト期限は、税関確認結果が登録されてから、460日間となります。<br>
+											　税関確認情報を保存しなかった場合、免税要件を満たしませんので、この期間内に税関確認情報を取得し、保存するようにしてください。</td>
+									</tr>
+									<tr>
+										<td>
+											<ul class="lst lst_dot mt0i" style="margin: 0;">
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）
+													</a>」</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q8">Q8　税関確認結果が変更されることはありますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="3" class="col-no">A</td>
+										<td class="col-text">　ありません。<br>
+											　税関確認結果については、確定したステータスに基づいて提供するため、税関確認情報区分が「免税不可」から「税関確認済」に変更となることや、「税関確認済」から「免税不可」に変更となることはありません。</td>
+									</tr>
+									<tr>
+										<td>（参考）</td>
+									</tr>
+									<tr>
+										<td>
+											<ul class="lst lst_dot mt0i" style="margin: 0;">
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」（5.2.5留意事項(1)「税関確認情報区分」のコード値について）
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+							<h2 id="q9">Q9　税関確認結果登録後に購入記録情報の取消データを送信できますか。</h2>
+							<table class="no-border-table" role="presentation">
+								<tbody>
+									<tr>
+										<td rowspan="3" class="col-no">A</td>
+										<td class="col-text">　できません。<br>
+											　なお、税関確認結果が登録された購入記録情報の取消しはできない仕様となっておりますので、ご留意ください。</td>
+									</tr>
+									<tr>
+										<td>（参考）</td>
+									</tr>
+									<tr>
+										<td>
+											<ul class="lst lst_dot mt0i" style="margin: 0;">
+												<li>「<a
+														href="/publication/pamph/shohi/menzei/201805/format/002.htm#a07">免税販売管理システムAPI仕様書（令和８年11月1日以後譲渡日分）</a>」（別紙５－３）
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul class="right noListImg">
+								<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm#faq">FAQ一覧へ</a></li>
+							</ul>
+
+
+
+							<!-- No.0026003-062 start -->
+							<div id="cntPDFarea" style="padding: 4px 4px;font-size: 0.8em;margin-top: 15px;margin-bottom: 15px;">
+							<p style="margin: 1em 0;">※<a href="/taxes/tetsuzuki/shinsei/annai/toiawase/1679/01.htm">PDFファイルが開けない、印刷できないなどの場合はこちらをご覧ください。</a></p>
+							</div>
+							<!-- No.0026003-062 end -->
+						</div>
+					</div>
+					<p class="page-top-link"><a href="#page-top">このページの先頭へ</a></p>
+
+				</div>
+				<!--/left-menu-->
+
+				<div class="right-menu">
+
+
+					<div class="panel panel-default sidenavi bmg20">
+						<div class="panel-heading">
+							<h2 class="panel-title"><a href="/publication/index.htm">刊行物等</a></h2>
+						</div>
+						<div class="panel-group" id="navi-Accordion">
+
+
+
+
+
+
+							<h3 class="sidenavi-title"><a class="navi_title"
+									href="/publication/pamph/01.htm">パンフレット・手引</a><a class="navi_btn"
+									data-parent="#sidenaviAccordion" data-toggle="collapse"
+									href="#sidenaviAccordionCollapse1"><img alt="メニューを閉じる"
+										src="/template/img/template/navi_up.png"></a></h3>
+							<div class="panel-collapse collapse in" id="sidenaviAccordionCollapse1">
+								<ul>
+									<li><a href="/publication/pamph/01.htm#a-01">広報関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-02">所得税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-03">源泉所得税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-04">譲渡・山林所得関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-10">相続税・贈与税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-05">法人税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-06">消費税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-07">印紙税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-08">酒税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-11">間接諸税関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-09">徴収関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-12">法定調書関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-13">電子申告等関係</a></li>
+									<li><a href="/publication/pamph/01.htm#a-14">その他</a></li>
+								</ul>
+							</div>
+							<h3 class="sidenavi-title"><a class="navi_title"
+									href="/publication/webtaxtv/index.html">インターネット番組（Web-TAX-TV）</a><a
+									class="navi_btn collapsed" data-parent="#sidenaviAccordion" data-toggle="collapse"
+									href="#sidenaviAccordionCollapse2"><img alt="メニューを開く"
+										src="/template/img/template/navi_down.png"></a></h3>
+							<div class="panel-collapse collapse" id="sidenaviAccordionCollapse2">
+								<ul>
+									<li><a href="/publication/webtaxtv/index.html#chumoku">注目動画</a></li>
+									<li><a href="/publication/webtaxtv/index.html#genre">ジャンルから動画を探す</a></li>
+									<li><a href="https://www.youtube.com/user/ntachannel">YouTube「国税庁動画チャンネル」</a></li>
+								</ul>
+							</div>
+							<h3 class="sidenavi-title"><a class="navi_title"
+									href="/publication/book/index.htm">出版物</a><a class="navi_btn collapsed"
+									data-parent="#sidenaviAccordion" data-toggle="collapse"
+									href="#sidenaviAccordionCollapse3"><img alt="メニューを開く"
+										src="/template/img/template/navi_down.png"></a></h3>
+							<div class="panel-collapse collapse" id="sidenaviAccordionCollapse3">
+								<ul>
+									<li><a href="/about/organization/ntc/kohon/index.htm">各税法の基礎知識（税務大学校講本）</a></li>
+								</ul>
+							</div>
+							<h3 class="sidenavi-title"><a class="navi_title"
+									href="/publication/statistics/index.htm">統計情報</a><a class="navi_btn collapsed"
+									data-parent="#sidenaviAccordion" data-toggle="collapse"
+									href="#sidenaviAccordionCollapse4"><img alt="メニューを開く"
+										src="/template/img/template/navi_down.png"></a></h3>
+							<div class="panel-collapse collapse" id="sidenaviAccordionCollapse4">
+								<ul>
+									<li><a href="/publication/statistics/index.htm#org">各国税局</a></li>
+								</ul>
+							</div>
+							<h3 class="sidenavi-title"><a class="navi_title"
+									href="/publication/tenji/index.htm">点字広報誌「私たちの税金」</a></h3>
+
+						</div>
+					</div>
+				</div>
+				<!--/right-menu-->
+
+			</div>
+			<!--/clearfix-->
+
+		</div>
+		<!--/wrap-->
+
+
+		<footer>
+			<h2>サイトマップ（コンテンツ一覧）</h2>
+			<ol class="breadcrumb footer">
+				<li><a href="/">ホーム</a></li>
+				<li><a href="/publication/index.htm">刊行物等</a></li>
+				<li><a href="/publication/pamph/01.htm">パンフレット・手引</a></li>
+				<li><a href="/publication/pamph/shohi/menzei/201805/0523.htm">輸出物品販売場における輸出免税について</a></li>
+				<li><a href="/publication/pamph/shohi/menzei/201805/format/002.htm">輸出物品販売場制度のリファンド方式への見直し</a></li>
+				<li class="active">リファンド方式（税関確認結果）のFAQ </li>
+			</ol>
+			<div id="footer"></div>
+		</footer>
+
+	</div>
+	<!--/container-->
+
+
+
+
+
+
+	<script>
+		$(document).ready(function (e) {
+			$('img[usemap]').rwdImageMaps();
+		});
+	</script>
+
+</body>
+
+</html>

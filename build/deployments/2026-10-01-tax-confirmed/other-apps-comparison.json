@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-01T15:59:41.205461+00:00",
+  "hosts": 8,
+  "requests": 16,
+  "comparison_fields": [
+    "status",
+    "exit",
+    "location"
+  ],
+  "changed": false,
+  "changes": [],
+  "remote_mutations": 0
+}

@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Thu, 01 Oct 2026 15:29:37 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 545
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Mon, 03 Aug 2026 09:16:35 GMT
+ETag: W/"221-19fc6e92138"
+

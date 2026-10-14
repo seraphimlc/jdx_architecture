@@ -1,0 +1,20 @@
+[
+  {
+    "host": "jdx.visitworld.me",
+    "url": "https://jdx.visitworld.me/",
+    "scheme": "https",
+    "status": "200",
+    "exit": 0,
+    "location": null,
+    "stderr": ""
+  },
+  {
+    "host": "jdx.visitworld.me",
+    "url": "http://jdx.visitworld.me/",
+    "scheme": "http",
+    "status": "301",
+    "exit": 0,
+    "location": "https://jdx.visitworld.me/",
+    "stderr": ""
+  }
+]

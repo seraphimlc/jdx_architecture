@@ -1,0 +1,10 @@
+{
+  "url": "https://jdx.visitworld.me",
+  "release": "90cc4508456d4dd183e0b1475b85ed80",
+  "content_digest": "4a4d941e359320e095c7240972293a92aedd0a2688d12584c0faec064c5afe2f",
+  "https_status": 200,
+  "certificate_state": "usable",
+  "content_matches_local": true,
+  "previous_release": "c829ff6d4e8f434dbf22080ebdcc8a76",
+  "rollback_executed": false
+}

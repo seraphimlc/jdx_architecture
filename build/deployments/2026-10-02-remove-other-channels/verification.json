@@ -1,0 +1,12 @@
+{
+  "url": "https://jdx.visitworld.me",
+  "release": "efcf9350defa4e23a4e2beebd2bf630d",
+  "content_digest": "47c3b9344748252f2fe9ddd5a5c2caa623ffee5ff339b693c6d5135d2b9dc77e",
+  "https_status": 200,
+  "certificate_state": "usable",
+  "content_matches_local": true,
+  "remote_snapshot": "after.json",
+  "previous_release": "b963d19216ad442c867948cd10b8bf2d",
+  "rollback_executed": false,
+  "rollback_note": "发布成功，无需回滚，保留前一版本"
+}

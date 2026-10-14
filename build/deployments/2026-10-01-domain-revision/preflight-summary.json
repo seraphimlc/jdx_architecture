@@ -1,0 +1,58 @@
+{
+  "captured_at": "2026-10-01T14:31:04.888972+00:00",
+  "operation": "read-only preflight; no deploy executed",
+  "target_url": "https://jdx.visitworld.me",
+  "manifest": {
+    "adapter": "static",
+    "description": "BilionPass business and system architecture planning document.",
+    "display_name": "JDX BilionPass Architecture",
+    "hostname": "jdx.visitworld.me",
+    "project_id": "d0d0c4a5-42a9-4df7-b21d-2d750e6bd6e3",
+    "public": true,
+    "runtime": {
+      "expected_statuses": [
+        200
+      ],
+      "health_path": "/",
+      "persistent_dirs": [],
+      "required_secrets": [],
+      "spa_fallback": true,
+      "start": null,
+      "working_dir": "."
+    },
+    "schema_version": 1,
+    "slug": "jdx",
+    "source": {
+      "artifact_dir": "docs/site",
+      "build": null
+    }
+  },
+  "manifest_digest": "9d75a63a04e8cde9166393915ba4c08d4af0d1dc15bd65c1e4e5a9678a09a61d",
+  "action": "update",
+  "confirmation_required": false,
+  "confirmation_reasons": [],
+  "dirty_paths": {
+    "deleted": [],
+    "staged": [],
+    "unstaged": [],
+    "untracked": []
+  },
+  "plan_digest": "e73f2439ff4dedf319e65f9b081328e3b3bd6dff55e3bf2679ad4dba21a32f34",
+  "certificate_state": "usable",
+  "nginx_site": {
+    "exists": true,
+    "owned": true,
+    "path": "/etc/nginx/sites-available/jdx.visitworld.me.conf"
+  },
+  "missing_secret_names": [],
+  "registry_current_release": "b24f5b741d174a128aa4bd6b2107088e",
+  "registry_previous_release": "517efd4d6f514397b322b9a3e0f13df2",
+  "registry_content_digest": "22e727df558bd7f11902fdf928368cbc21d5bb8f09fc6dcb1acfc67b97e61ba9",
+  "public_body_sha256": "22e727df558bd7f11902fdf928368cbc21d5bb8f09fc6dcb1acfc67b97e61ba9",
+  "public_digest_matches_registry": true,
+  "snapshot_current_release": null,
+  "plan_current_release": null,
+  "plan_rollback_release": "517efd4d6f514397b322b9a3e0f13df2",
+  "note": "Snapshot/plan top-level current_release is null; registry current_release is populated and public body digest matches registry. Use registry for before-release evidence.",
+  "deploy_command": "python3 /Users/liuchang/.codex/skills/deploy-visitworld/scripts/deploy_visitworld.py deploy --root /Users/liuchang/Documents/gitproject/jdx_architecture --json"
+}
